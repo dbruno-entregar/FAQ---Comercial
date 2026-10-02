@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual de Usuario & FAQ - BI Comercial Logística</title>
+    <title>Manual de Usuario & Guía de Métricas — BI Comercial</title>
     <style>
         :root {
             --primary: #0f172a;
@@ -28,7 +28,8 @@
             --red-text: #991b1b;
             --red-border: #fecaca;
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --header-height: 72px;
         }
 
         * {
@@ -37,65 +38,82 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--header-height) + 20px);
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.6;
-            scroll-behavior: smooth;
         }
 
-        /* Header */
+        /* 1. Header Compacto */
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #ffffff;
-            padding: 3rem 2rem 2.5rem;
-            border-bottom: 4px solid var(--accent);
+            padding: 0.75rem 1.5rem;
+            border-bottom: 3px solid var(--accent);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             box-shadow: var(--shadow-md);
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
         }
 
         .header-container {
+            width: 100%;
             max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 1rem;
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
         }
 
         .header-title h1 {
-            font-size: 1.85rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            letter-spacing: -0.025em;
+            letter-spacing: -0.01em;
+            color: #ffffff;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
 
-        .header-title p {
+        .header-title span.tag {
+            background-color: #334155;
             color: #94a3b8;
-            font-size: 0.95rem;
-            margin-top: 0.35rem;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
         }
 
         .search-box {
             position: relative;
             width: 100%;
-            max-width: 380px;
+            max-width: 320px;
         }
 
         .search-box input {
             width: 100%;
-            padding: 0.75rem 1rem 0.75rem 2.75rem;
+            padding: 0.45rem 0.85rem 0.45rem 2.25rem;
             border-radius: 9999px;
             border: 1px solid #334155;
             background-color: #1e293b;
             color: #ffffff;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             outline: none;
             transition: all 0.2s ease;
         }
@@ -103,50 +121,50 @@
         .search-box input:focus {
             border-color: var(--accent);
             background-color: #0f172a;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
         }
 
         .search-box svg {
             position: absolute;
-            left: 1rem;
+            left: 0.8rem;
             top: 50%;
             transform: translateY(-50%);
-            width: 1.1rem;
-            height: 1.1rem;
+            width: 0.95rem;
+            height: 0.95rem;
             fill: #94a3b8;
         }
 
         /* Layout Container */
         .layout-container {
             max-width: 1400px;
-            margin: 2rem auto;
+            margin: 1.5rem auto;
             padding: 0 1.5rem;
             display: grid;
-            grid-template-columns: 290px 1fr;
-            gap: 2.5rem;
+            grid-template-columns: 270px 1fr;
+            gap: 2rem;
             align-items: start;
         }
 
         /* Sidebar Navigation */
         aside.sidebar {
             position: sticky;
-            top: 7.5rem;
+            top: calc(var(--header-height) + 1.5rem);
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.25rem;
+            border-radius: 10px;
+            padding: 1rem;
             box-shadow: var(--shadow-sm);
-            max-height: calc(100vh - 9rem);
+            max-height: calc(100vh - var(--header-height) - 3rem);
             overflow-y: auto;
         }
 
         .sidebar-title {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--text-muted);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             padding-left: 0.5rem;
         }
 
@@ -154,15 +172,15 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
+            gap: 0.2rem;
         }
 
         .sidebar-nav a {
             display: block;
-            padding: 0.5rem 0.75rem;
+            padding: 0.45rem 0.65rem;
             color: var(--text-main);
             text-decoration: none;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             font-weight: 500;
             border-radius: 6px;
             transition: all 0.15s ease;
@@ -171,7 +189,7 @@
         .sidebar-nav a:hover {
             background-color: var(--accent-light);
             color: var(--accent);
-            padding-left: 1rem;
+            padding-left: 0.85rem;
         }
 
         .sidebar-nav a.active {
@@ -180,72 +198,73 @@
             font-weight: 600;
         }
 
-        /* Main Content */
+        /* 2. Secciones con Margen de Scroll Ajustado */
         main.content {
-            background: transparent;
             min-width: 0;
         }
 
         section.card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2.25rem;
-            margin-bottom: 2rem;
+            border-radius: 10px;
+            padding: 1.75rem 2rem;
+            margin-bottom: 1.5rem;
             box-shadow: var(--shadow-sm);
+            scroll-margin-top: calc(var(--header-height) + 20px);
         }
 
         h2.section-header {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             color: var(--text-heading);
             font-weight: 700;
-            padding-bottom: 0.75rem;
-            margin-bottom: 1.5rem;
+            padding-bottom: 0.6rem;
+            margin-bottom: 1.25rem;
             border-bottom: 2px solid var(--border);
             display: flex;
             align-items: center;
-            gap: 0.65rem;
+            gap: 0.5rem;
+            scroll-margin-top: calc(var(--header-height) + 20px);
         }
 
         h3.sub-header {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             color: var(--text-heading);
             font-weight: 600;
-            margin: 1.5rem 0 0.75rem;
+            margin: 1.35rem 0 0.65rem;
         }
 
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 0.85rem;
             color: var(--text-main);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
         }
 
         /* Tables */
         .table-responsive {
             overflow-x: auto;
-            margin: 1.25rem 0;
-            border-radius: 8px;
+            margin: 1rem 0;
+            border-radius: 6px;
             border: 1px solid var(--border);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             text-align: left;
         }
 
         th {
-            background-color: #f1f5f9;
+            background-color: #f8fafc;
             color: #1e293b;
             font-weight: 600;
-            padding: 0.75rem 1rem;
+            padding: 0.65rem 0.85rem;
             border-bottom: 1px solid var(--border);
             white-space: nowrap;
         }
 
         td {
-            padding: 0.75rem 1rem;
+            padding: 0.65rem 0.85rem;
             border-bottom: 1px solid var(--border);
             color: var(--text-main);
             vertical-align: top;
@@ -256,18 +275,18 @@
         }
 
         tr:nth-child(even) {
-            background-color: #fafafa;
+            background-color: #fafbfc;
         }
 
         tr:hover {
-            background-color: #f8fafc;
+            background-color: #f1f5f9;
         }
 
         /* Badges */
         .badge {
             display: inline-flex;
             align-items: center;
-            padding: 0.25rem 0.65rem;
+            padding: 0.2rem 0.55rem;
             font-size: 0.75rem;
             font-weight: 700;
             border-radius: 9999px;
@@ -293,20 +312,12 @@
             border: 1px solid var(--red-border);
         }
 
-        .badge-blue {
-            background-color: var(--accent-light);
-            color: var(--accent);
-            border: 1px solid #bfdbfe;
-        }
-
         /* Callouts / Alerts */
         .callout {
-            border-radius: 8px;
-            padding: 1rem 1.25rem;
-            margin: 1.25rem 0;
-            display: flex;
-            gap: 0.75rem;
-            font-size: 0.92rem;
+            border-radius: 6px;
+            padding: 0.85rem 1rem;
+            margin: 1rem 0;
+            font-size: 0.88rem;
             border-left: 4px solid;
         }
 
@@ -328,46 +339,52 @@
             color: #065f46;
         }
 
-        .callout-danger {
-            background-color: #fef2f2;
-            border-color: #ef4444;
-            color: #991b1b;
-        }
-
-        /* Code Blocks & DAX */
-        code {
-            background-color: #f1f5f9;
-            color: #b91c1c;
-            padding: 0.15rem 0.4rem;
-            border-radius: 4px;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            font-size: 0.85em;
-        }
-
-        pre {
-            background-color: #0f172a;
-            color: #e2e8f0;
-            padding: 1.25rem;
-            border-radius: 8px;
-            overflow-x: auto;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            font-size: 0.86rem;
-            line-height: 1.5;
+        /* Metric Grid & Formula Cards (Lenguaje Natural) */
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
             margin: 1rem 0;
-            position: relative;
         }
 
-        pre code {
-            background-color: transparent;
-            color: inherit;
-            padding: 0;
+        .metric-card {
+            background-color: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem 1.15rem;
+            border-top: 3px solid var(--accent);
+        }
+
+        .metric-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 0.35rem;
+        }
+
+        .metric-card .formula-box {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            background: var(--accent-light);
+            padding: 0.35rem 0.6rem;
+            border-radius: 4px;
+            display: block;
+            margin-bottom: 0.5rem;
+            border-left: 2px solid var(--accent);
+        }
+
+        .metric-card p {
+            font-size: 0.85rem;
+            margin-bottom: 0;
+            color: var(--text-main);
         }
 
         /* FAQ Accordion */
         .faq-item {
             border: 1px solid var(--border);
-            border-radius: 8px;
-            margin-bottom: 0.75rem;
+            border-radius: 6px;
+            margin-bottom: 0.65rem;
             background: #ffffff;
             transition: border-color 0.2s;
         }
@@ -377,10 +394,11 @@
         }
 
         .faq-question {
-            padding: 1rem 1.25rem;
+            padding: 0.85rem 1.15rem;
             cursor: pointer;
             font-weight: 600;
             color: var(--text-heading);
+            font-size: 0.92rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -388,10 +406,11 @@
         }
 
         .faq-question svg {
-            width: 1.25rem;
-            height: 1.25rem;
+            width: 1.1rem;
+            height: 1.1rem;
             transition: transform 0.2s ease;
             fill: var(--text-muted);
+            flex-shrink: 0;
         }
 
         .faq-item.open .faq-question svg {
@@ -399,72 +418,27 @@
         }
 
         .faq-answer {
-            padding: 0 1.25rem 1.25rem;
+            padding: 0 1.15rem 1rem;
             display: none;
             color: var(--text-main);
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             border-top: 1px solid #f1f5f9;
-            margin-top: -0.25rem;
-            padding-top: 1rem;
+            padding-top: 0.75rem;
         }
 
         .faq-item.open .faq-answer {
             display: block;
         }
 
-        /* Metric Card Grid */
-        .metric-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.25rem;
-            margin: 1.25rem 0;
-        }
-
-        .metric-card {
-            background-color: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.25rem;
-            border-top: 3px solid var(--accent);
-        }
-
-        .metric-card h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-heading);
-            margin-bottom: 0.35rem;
-        }
-
-        .metric-card .formula {
-            font-size: 0.8rem;
-            color: var(--accent);
-            font-family: monospace;
-            background: var(--accent-light);
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 0.65rem;
-        }
-
-        .metric-card p {
-            font-size: 0.88rem;
-            margin-bottom: 0;
-        }
-
         /* Footer */
         footer {
             background-color: #0f172a;
             color: #94a3b8;
-            padding: 2.5rem 1.5rem;
+            padding: 1.75rem 1.5rem;
             text-align: center;
-            font-size: 0.88rem;
-            margin-top: 3rem;
+            font-size: 0.82rem;
+            margin-top: 2rem;
             border-top: 1px solid #1e293b;
-        }
-
-        footer a {
-            color: #38bdf8;
-            text-decoration: none;
         }
 
         /* Responsive */
@@ -481,18 +455,16 @@
 </head>
 <body>
 
-    <!-- Header Principal -->
+    <!-- 1. Header Compacto -->
     <header>
         <div class="header-container">
             <div class="header-title">
-                <h1>
-                    <span>📦</span> Manual de Usuario & FAQ — BI Comercial
-                </h1>
-                <p>Guía de uso, metodología de cálculo y diccionario de métricas para la Suite Comercial en Power BI</p>
+                <h1><span>📦</span> BI Comercial — Guía de Métricas & Ayuda</h1>
+                <span class="tag">Versión 2.0</span>
             </div>
             <div class="search-box">
                 <svg viewBox="0 0 24 24"><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"/></svg>
-                <input type="text" id="searchInput" placeholder="Buscar métrica, página o pregunta..." onkeyup="filterDocs()">
+                <input type="text" id="searchInput" placeholder="Buscar métrica o pregunta..." onkeyup="filterDocs()">
             </div>
         </div>
     </header>
@@ -501,18 +473,16 @@
         
         <!-- Menú Lateral Fijo (Índice de Navegación) -->
         <aside class="sidebar">
-            <div class="sidebar-title">Índice del Manual</div>
+            <div class="sidebar-title">Contenido del Manual</div>
             <nav>
                 <ul class="sidebar-nav">
-                    <li><a href="#proposito" class="nav-link active">1. Propósito & Rutinas</a></li>
-                    <li><a href="#pag1" class="nav-link">2. Pág 1: Facturación & Mix</a></li>
-                    <li><a href="#pag2" class="nav-link">3. Pág 2: Pricing & Benchmark</a></li>
-                    <li><a href="#pag3" class="nav-link">4. Pág 3: Semáforo Tarifario</a></li>
-                    <li><a href="#pag4" class="nav-link">5. Pág 4: Pesos & Densidad $/Kg</a></li>
-                    <li><a href="#pag5" class="nav-link">6. Pág 5: Cohorte Same-Store</a></li>
-                    <li><a href="#pag6" class="nav-link">7. Pág 6: Ficha 360° Auditoría</a></li>
-                    <li><a href="#formulas" class="nav-link">8. Fórmulas DAX Clave</a></li>
-                    <li><a href="#faq" class="nav-link">9. Preguntas Frecuentes (FAQ)</a></li>
+                    <li><a href="#pag1" class="nav-link active">1. Facturación & Mix Comercial</a></li>
+                    <li><a href="#pag2" class="nav-link">2. Pricing & Benchmark</a></li>
+                    <li><a href="#pag3" class="nav-link">3. Semáforo Tarifario</a></li>
+                    <li><a href="#pag4" class="nav-link">4. Pesos & Densidad ($/Kg)</a></li>
+                    <li><a href="#pag5" class="nav-link">5. Cohorte Same-Store</a></li>
+                    <li><a href="#pag6" class="nav-link">6. Ficha 360° de Clientes</a></li>
+                    <li><a href="#faq" class="nav-link">7. Preguntas Frecuentes (FAQ)</a></li>
                 </ul>
             </nav>
         </aside>
@@ -520,213 +490,201 @@
         <!-- Contenido Central -->
         <main class="content">
 
-            <!-- SECCIÓN 1: PROPÓSITO -->
-            <section id="proposito" class="card doc-section">
-                <h2 class="section-header"><span>🎯</span> 1. Propósito y Rutinas de Gestión Comercial</h2>
-                <p>
-                    Esta Suite de Business Intelligence no es un simple acumulador de ventas: es una <strong>herramienta de control de rentabilidad, defensa de tarifas contra la inflación y gestión táctica de cuentas</strong> en distribución y paquetería logística en Argentina.
-                </p>
-
-                <div class="callout callout-info">
-                    <strong>Objetivo Estratégico:</strong> Identificar qué clientes están rezagados frente a los aumentos de costos operativos (combustible, mano de obra CEDOL, neumáticos) para negociar tarifas con respaldo matemático irrefutable.
-                </div>
-
-                <h3 class="sub-header">Rutinas Comerciales Recomendadas</h3>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Frecuencia</th>
-                                <th>Pantalla de Trabajo</th>
-                                <th>Responsable</th>
-                                <th>Acción Concreta</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Semanal</strong></td>
-                                <td><a href="#pag3">Página 3: Semáforo Tarifario</a></td>
-                                <td>KAMs / Jefatura Comercial</td>
-                                <td>Filtrar clientes en <span class="badge badge-red">🔴 Crítico</span> y programar reuniones de aumento inmediatas.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Reunión con Cliente</strong></td>
-                                <td><a href="#pag6">Página 6: Ficha 360°</a></td>
-                                <td>Ejecutivo de Cuentas</td>
-                                <td>Auditar salud integral, curva de volumen, cumplimiento de SLA y dispersión de peso antes de llamar.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Publicación CEDOL</strong></td>
-                                <td><a href="#pag2">Página 2: Pricing & Benchmark</a></td>
-                                <td>Gerencia / Pricing</td>
-                                <td>Comparar la inflación de costos UTN/CEDOL vs la tarifa promedio cobrada por la empresa.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Cierre de Mes</strong></td>
-                                <td><a href="#pag1">Página 1: Facturación & Mix</a></td>
-                                <td>Dirección Comercial</td>
-                                <td>Control de facturación neta, ticket unitario alcanzado y dispersión geográfica AMBA vs Interior.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Trimestral</strong></td>
-                                <td><a href="#pag5">Página 5: Cohorte Same-Store</a></td>
-                                <td>Directorio / Finanzas</td>
-                                <td>Evaluar si el crecimiento proviene de clientes fieles existentes o de altas nuevas (y vigilar el churn).</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <!-- SECCIÓN 2: PÁGINA 1 -->
+            <!-- PÁGINA 1: FACTURACIÓN & MIX COMERCIAL -->
             <section id="pag1" class="card doc-section">
-                <h2 class="section-header"><span>📊</span> 2. Página 1: Facturación & Mix Comercial</h2>
+                <h2 class="section-header"><span>📊</span> 1. Página 1: Facturación & Mix Comercial</h2>
                 <p>
-                    Ofrece la vista panorámica de la empresa: ingresos totales, paquetes despachados, ticket medio por paquete y concentración territorial y por cliente (Pareto).
+                    Brinda una visión panorámica y ejecutiva sobre la marcha general del negocio: ingresos totales alcanzados, volumen de paquetes despachados, tarifa promedio resultante y distribución territorial de las entregas.
                 </p>
 
-                <h3 class="sub-header">Métricas Principales</h3>
+                <h3 class="sub-header">¿Qué analiza esta pantalla?</h3>
+                <ul>
+                    <li><strong>Evolución de Ingresos y Volumen:</strong> Monitorea mes a mes la facturación neta y la cantidad de paquetes procesados por la red de distribución.</li>
+                    <li><strong>Tarifa Promedio por Envío:</strong> Muestra cuánto paga en promedio un cliente por paquete y cómo varía esa tarifa a lo largo del tiempo.</li>
+                    <li><strong>Dispersión Geográfica:</strong> Proporción de envíos y dinero concentrado en distribución urbana (AMBA) frente a paquetería federal (Interior).</li>
+                    <li><strong>Concentración de Clientes (Pareto):** Identifica qué clientes generan el mayor porcentaje de los ingresos de la empresa.</li>
+                </ul>
+
+                <h3 class="sub-header">Métricas y Cómo se Calculan</h3>
                 <div class="metric-grid">
                     <div class="metric-card">
                         <h4>Facturación Total</h4>
-                        <div class="formula">SUM(fact_envios[Total])</div>
-                        <p>Facturación neta comercial acumulada en el período filtrado, sin incluir impuestos.</p>
+                        <div class="formula-box">Cálculo: Suma de la facturación neta de todos los envíos del período.</div>
+                        <p>Total de dinero neto facturado por servicios de distribución, sin incluir IVA ni cargos extraordinarios.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Total Envíos</h4>
-                        <div class="formula">DISTINCTCOUNT(fact_envios[Código])</div>
-                        <p>Cantidad total de bultos/guías despachadas. Es el termómetro del volumen físico y ocupación de red.</p>
+                        <div class="formula-box">Cálculo: Conteo de guías o paquetes únicos procesados.</div>
+                        <p>Indicador puro de volumen físico y nivel de ocupación de las camionetas y sucursales.</p>
                     </div>
                     <div class="metric-card">
-                        <h4>Ticket Promedio Envío</h4>
-                        <div class="formula">Facturación Total / Total Envíos</div>
-                        <p>Tarifa media neta cobrada por paquete. Promedio histórico de la empresa: <strong>$5.520 por envío</strong>.</p>
+                        <h4>Ticket Promedio por Envío</h4>
+                        <div class="formula-box">Cálculo: Facturación Total ÷ Total de Envíos.</div>
+                        <p>Es la tarifa unitaria promedio que la empresa percibe por cada paquete entregado.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Facturación YoY % Nominal</h4>
-                        <div class="formula">(Fact Actual - Fact Año Ant) / Fact Año Ant</div>
-                        <p>Crecimiento en pesos frente al mismo período del año anterior (incluye efecto volumen + efecto inflación de precios).</p>
+                        <div class="formula-box">Cálculo: (Facturación Actual - Facturación Año Anterior) ÷ Facturación Año Anterior.</div>
+                        <p>Mide cuánto creció la facturación en pesos respecto al mismo período del año pasado (combina el crecimiento por volumen y los aumentos de tarifas).</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Ticket Promedio YoY %</h4>
+                        <div class="formula-box">Cálculo: (Ticket Promedio Actual - Ticket Año Anterior) ÷ Ticket Año Anterior.</div>
+                        <p>Muestra la variación en el precio promedio por paquete frente al año pasado. Refleja el ajuste de precios interanual.</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Mix AMBA vs. Interior</h4>
+                        <div class="formula-box">Cálculo: (Envíos por Región ÷ Total Envíos de la Empresa) × 100.</div>
+                        <p>Porcentaje de la operación que se realiza en el Gran Buenos Aires / CABA frente a los envíos despachados al interior del país.</p>
                     </div>
                 </div>
 
-                <div class="callout callout-warning">
-                    <strong>Regla de Interpretación:</strong> Si la <em>Facturación YoY %</em> crece al 120% pero el <em>Volumen de Envíos</em> cae un 5%, el crecimiento es 100% inflacionario y la empresa está perdiendo presencia física en el mercado.
+                <div class="callout callout-info">
+                    <strong>Punto clave:</strong> Si la facturación en pesos crece al 100% pero la cantidad de envíos se mantiene igual, el crecimiento de la empresa responde exclusivamente a traslados de precios por inflación y no a mayor volumen físico de mercado.
                 </div>
             </section>
 
-            <!-- SECCIÓN 3: PÁGINA 2 -->
+            <!-- PÁGINA 2: PRICING & BENCHMARK -->
             <section id="pag2" class="card doc-section">
-                <h2 class="section-header"><span>📈</span> 3. Página 2: Pricing & Benchmark (Tarifa vs. Costos)</h2>
+                <h2 class="section-header"><span>📈</span> 2. Página 2: Pricing & Benchmark (Tarifa vs. Costos)</h2>
                 <p>
-                    Compara la tarifa promedio cobrada por la empresa frente a los dos índices de referencia económica oficial de Argentina, todos normalizados a <strong>Base 100 = Enero 2025</strong>.
+                    Permite evaluar si las tarifas promedio de la empresa acompañaron el ritmo de los costos operativos reales del sector o si se produjo un atraso tarifario.
                 </p>
 
-                <h3 class="sub-header">Los 3 Índices Comparativos</h3>
+                <h3 class="sub-header">Los 3 Índices de Comparación (Base 100 = Enero 2025)</h3>
+                <p>
+                    Para comparar magnitudes de distinta escala en una misma curva temporal, los tres indicadores parten de <strong>Base 100 en Enero 2025</strong>:
+                </p>
                 <div class="table-responsive">
                     <table>
                         <thead>
                             <tr>
-                                <th>Índice</th>
-                                <th>Fuente Oficial</th>
-                                <th>Significado de Negocio</th>
+                                <th>Indicador</th>
+                                <th>Origen de la Información</th>
+                                <th>Qué Representa</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Tarifa Empresa Base 100</strong></td>
-                                <td>Datos Propios</td>
-                                <td>Mide cómo evolucionó el ticket promedio unitario que cobramos a los clientes desde enero 2025.</td>
+                                <td><strong>Índice Tarifa Empresa</strong></td>
+                                <td>Facturación y Envíos de la Empresa</td>
+                                <td>Evolución del ticket promedio cobrado por paquete partiendo desde Base 100 en enero 2025.</td>
                             </tr>
                             <tr>
-                                <td><strong>CEDOL Con Transporte</strong></td>
-                                <td>Cámara CEDOL / UTN</td>
-                                <td><strong>Inflación real de costos logísticos:</strong> mano de obra del CCT 40/89 Camioneros, combustible, neumáticos, seguros y amortización de flota.</td>
+                                <td><strong>Índice CEDOL Con Transporte</strong></td>
+                                <td>Cámara CEDOL / Universidad Tecnológica Nacional (UTN)</td>
+                                <td><strong>Inflación oficial de costos del transporte:</strong> evolución mensual de salarios del convenio Camioneros 40/89, combustible gasoil, neumáticos, seguros, mantenimiento y amortización de utilitarios.</td>
                             </tr>
                             <tr>
-                                <td><strong>IPC Nacional</strong></td>
+                                <td><strong>Índice IPC</strong></td>
                                 <td>INDEC</td>
-                                <td>Inflación general de la economía argentina.</td>
+                                <td>Inflación general de la economía argentina (Índice de Precios al Consumidor).</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <h3 class="sub-header">Brecha vs. CEDOL (La Métrica Reina de Rentabilidad)</h3>
-                <p>
-                    Se calcula restando el Índice de la Empresa menos el Índice CEDOL:
-                </p>
-                <div class="metric-card" style="border-top-color: #ef4444;">
-                    <h4>Brecha vs CEDOL (en puntos porcentuales)</h4>
-                    <div class="formula">Índice Tarifa Empresa - Índice CEDOL</div>
-                    <p>
-                        Si da <strong>negativo</strong> (por ejemplo: <code>-39,5 p.p.</code>), significa que los costos del sector aumentaron 39,5 puntos porcentuales más que las tarifas de la empresa. 
-                        <strong>El margen se está achicando y urge actualizar tarifas.</strong>
-                    </p>
+                <h3 class="sub-header">Métricas y Cómo se Calculan</h3>
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <h4>Brecha vs. CEDOL (en puntos)</h4>
+                        <div class="formula-box">Cálculo: Índice Tarifa Empresa - Índice CEDOL.</div>
+                        <p>Si la brecha es <strong>negativa</strong> (por ejemplo: -39 p.p.), significa que los costos del transporte crecieron 39 puntos por encima de las tarifas cobradas por la empresa.</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Tarifa Teórica Lista B</h4>
+                        <div class="formula-box">Cálculo: Tarifa oficial de Lista B correspondiente al peso y zona de cada paquete.</div>
+                        <p>Valor de mostrador que el cliente debería haber pagado según la lista de precios oficial sin descuentos.</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>% Desvío sobre Lista</h4>
+                        <div class="formula-box">Cálculo: (Facturación Real - Facturación Lista B) ÷ Facturación Lista B.</div>
+                        <p>Si da negativo (ej: -15%), refleja que el cliente opera con un descuento del 15% respecto a la lista base oficial.</p>
+                    </div>
                 </div>
             </section>
 
-            <!-- SECCIÓN 4: PÁGINA 3 -->
+            <!-- PÁGINA 3: ANTIGÜEDAD DE TARIFAS & SEMÁFORO -->
             <section id="pag3" class="card doc-section">
-                <h2 class="section-header"><span>🚦</span> 4. Página 3: Antigüedad de Tarifas & Semáforo de Ajustes</h2>
+                <h2 class="section-header"><span>🚦</span> 3. Página 3: Antigüedad de Tarifas & Semáforo</h2>
                 <p>
-                    Es el <strong>tablero de batalla del equipo comercial</strong>. Permite auditar en tiempo real qué clientes tienen sus tarifas congeladas y cuánto dinero mensual está en riesgo.
+                    Tablero de consulta para auditar la vigencia de los precios en la cartera activa de clientes. Muestra de forma inmediata qué clientes tienen tarifas al día, cuáles están en ventana de revisión y cuáles presentan congelamiento.
                 </p>
 
-                <h3 class="sub-header">Criterios de Clasificación del Semáforo</h3>
+                <h3 class="sub-header">Criterio de Clasificación del Semáforo</h3>
                 <div class="table-responsive">
                     <table>
                         <thead>
                             <tr>
                                 <th>Estado</th>
-                                <th>Meses sin Aumento</th>
-                                <th>Diagnóstico Comercial</th>
-                                <th>Acción Requerida</th>
+                                <th>Meses sin Actualización</th>
+                                <th>Definición de la Condición</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><span class="badge badge-green">🟢 Al Día</span></td>
                                 <td><strong>0 a 1 mes</strong></td>
-                                <td>Tuvo aumento reciente (o es un alta menor a 90 días).</td>
-                                <td>Mantener monitoreo de rutina. Sin acción comercial.</td>
+                                <td>Cuentas con aumento registrado en el mes actual o en el mes anterior, o clientes dados de alta hace menos de 90 días.</td>
                             </tr>
                             <tr>
                                 <td><span class="badge badge-yellow">🟡 En Revisión</span></td>
                                 <td><strong>2 a 3 meses</strong></td>
-                                <td>En ventana típica de renegociación bimestral/trimestral.</td>
-                                <td>El KAM debe preavisar que se acerca el ajuste programado.</td>
+                                <td>Cuentas que se encuentran en el intervalo habitual de revisión tarifaria bimestral o trimestral.</td>
                             </tr>
                             <tr>
                                 <td><span class="badge badge-red">🔴 Crítico</span></td>
-                                <td><strong>≥ 4 meses</strong></td>
-                                <td><strong>Tarifa congelada.</strong> Se pierde margen neto cada mes frente al aumento de salarios y combustible.</td>
-                                <td><strong>Acción Inmediata:</strong> Solicitar reunión de aumento en un plazo máximo de 7 días.</td>
+                                <td><strong>4 meses o más</strong></td>
+                                <td>Cuentas con tarifa fija hace 4 meses o más, acumulando atraso frente a la inflación de costos.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <h3 class="sub-header">Columnas de la Tabla de Negociación</h3>
-                <ul>
-                    <li><strong>Envíos Último Mes:</strong> Paquetes despachados por el cliente en el último mes cerrado (ej: <code>9.776 paquetes</code>). Permite dimensionar si el cliente mueve un volumen gigante o pequeño.</li>
-                    <li><strong>Facturación Último Mes:</strong> Facturación del cliente en el último mes cerrado (ej: <code>$47,4M</code>). Permite priorizar a quién llamar primero.</li>
-                    <li><strong>Ticket Último Mes:</strong> Tarifa unitaria efectiva que pagó en el último mes (<code>Facturación / Envíos</code>).</li>
-                    <li><strong>Último Mes Aumento:</strong> Fecha exacta en que se detectó su último incremento $\ge 4\%$ (ej: <code>Mayo 2025</code>).</li>
-                    <li><strong>Meses Sin Aumento:</strong> Antigüedad transcurrida desde ese ajuste (ej: <code>16 meses</code>).</li>
-                    <li><strong>CEDOL a Recuperar %:</strong> <em>El argumento irrefutable para la reunión:</em> <code>+21,6%</code> de inflación de costos acumulada por la UTN desde su última actualización.</li>
-                    <li><strong>% Desvío sobre Lista:</strong> Compara lo que paga el cliente vs. la Lista B oficial. Un <code>-15%</code> indica que tiene un descuento comercial pactado del 15% sobre la lista base.</li>
-                </ul>
+                <h3 class="sub-header">Columnas de la Tabla y Cómo se Calculan</h3>
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <h4>Envíos Último Mes</h4>
+                        <div class="formula-box">Cálculo: Cantidad de paquetes despachados por el cliente en el último mes cerrado.</div>
+                        <p>Permite dimensionar el volumen físico que mueve la cuenta (ej: 24.000 paquetes vs. 200 paquetes).</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Facturación Último Mes</h4>
+                        <div class="formula-box">Cálculo: Facturación neta del cliente en el último mes cerrado.</div>
+                        <p>Permite dimensionar el impacto económico mensual de la cuenta.</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Ticket Último Mes</h4>
+                        <div class="formula-box">Cálculo: Facturación Último Mes ÷ Envíos Último Mes.</div>
+                        <p>Precio promedio efectivo que pagó el cliente por paquete en su última operación.</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Último Mes Aumento</h4>
+                        <div class="formula-box">Cálculo: Último mes donde el ticket promedio del cliente subió un 4% o más frente a su mes previo.</div>
+                        <p>Fecha exacta del último incremento tarifario detectado por el sistema. Si nunca tuvo aumentos desde el alta, figura como "Sin Aumento Detectado".</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Meses Sin Aumento</h4>
+                        <div class="formula-box">Cálculo: Cantidad de meses calendario transcurridos desde el último aumento hasta hoy.</div>
+                        <p>Indica la cantidad de meses que lleva congelada la tarifa del cliente.</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>CEDOL a Recuperar %</h4>
+                        <div class="formula-box">Cálculo: Inflación acumulada por el índice CEDOL desde el mes del último aumento hasta hoy.</div>
+                        <p>Expresa con exactitud cuánto aumentaron los costos oficiales de transporte mientras la tarifa del cliente se mantuvo fija.</p>
+                    </div>
+                </div>
 
                 <div class="callout callout-success">
-                    <strong>Filtro de Cartera Activa:</strong> La tabla está filtrada con <code>Facturacion Ultimo Mes > 0</code>, asegurando que solo aparezcan los <strong>114 clientes vigentes</strong> y dejando fuera cuentas dadas de baja en años anteriores.
+                    <strong>Filtro de Cartera Activa:</strong> La tabla está configurada para mostrar únicamente clientes con facturación mayor a $0 en el último mes (114 clientes vigentes), descartando cuentas inactivas o dadas de baja en años anteriores.
                 </div>
             </section>
 
-            <!-- SECCIÓN 5: PÁGINA 4 -->
+            <!-- PÁGINA 4: PESOS & DENSIDAD -->
             <section id="pag4" class="card doc-section">
-                <h2 class="section-header"><span>⚖️</span> 5. Página 4: Pesos & Densidad Logística ($/Kg)</h2>
+                <h2 class="section-header"><span>⚖️</span> 4. Página 4: Pesos & Densidad Logística ($/Kg)</h2>
                 <p>
-                    Controla que la empresa no esté transportando mercadería pesada cobrando tarifas de paquetes livianos (evita el subsidio cruzado de flete).
+                    Analiza la relación entre el peso en kilogramos que transporta la flota de vehículos y los ingresos en pesos que genera ese transporte.
                 </p>
 
                 <h3 class="sub-header">Los 3 Segmentos de Peso</h3>
@@ -736,9 +694,9 @@
                             <tr>
                                 <th>Segmento</th>
                                 <th>Rango de Peso</th>
-                                <th>% Envíos</th>
-                                <th>% Toneladas Totales</th>
-                                <th>Impacto Operativo</th>
+                                <th>% del Volumen de Envíos</th>
+                                <th>% de Kilos Transportados</th>
+                                <th>Características del Servicio</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -747,125 +705,142 @@
                                 <td>Hasta 3 kg</td>
                                 <td><strong>73,4%</strong></td>
                                 <td><strong>25,7%</strong></td>
-                                <td>Core del e-commerce (indumentaria, cosmética, electrónica). Alto rendimiento $/Kg.</td>
+                                <td>Paquetería estándar de e-commerce (calzado, indumentaria, accesorios, cosmética).</td>
                             </tr>
                             <tr>
                                 <td><strong>2. Mediano</strong></td>
                                 <td>3 a 10 kg</td>
                                 <td><strong>18,1%</strong></td>
                                 <td><strong>26,1%</strong></td>
-                                <td>Cajas medianas, repuestos, pequeños electrodomésticos.</td>
+                                <td>Cajas medianas, pequeños electrodomésticos y herramientas.</td>
                             </tr>
                             <tr>
                                 <td><strong>3. Pesado</strong></td>
                                 <td>Más de 10 kg</td>
                                 <td><strong>8,5%</strong></td>
                                 <td><strong>48,2%</strong></td>
-                                <td><strong>Alerta:</strong> Apenas el 8,5% de los envíos se lleva la mitad de los kilos de las camionetas.</td>
+                                <td>Bultos de gran tamaño que concentran casi la mitad de los kilos totales transportados.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <h3 class="sub-header">Métrica de Densidad: Rendimiento $/Kg</h3>
-                <div class="metric-card" style="border-top-color: #10b981;">
-                    <h4>Rendimiento $/Kg</h4>
-                    <div class="formula">Facturación Total / Kilos Totales Transportados</div>
-                    <p>
-                        Indica cuántos pesos ingresan a la empresa por cada kilogramo transportado. 
-                        El promedio de la empresa es de <strong>$1.453 por Kg</strong>. Si un cliente rinde menos de <strong>$400/Kg</strong>, está consumiendo capacidad cúbica a precio ruinoso.
-                    </p>
+                <h3 class="sub-header">Métricas y Cómo se Calculan</h3>
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <h4>Rendimiento $/Kg</h4>
+                        <div class="formula-box">Cálculo: Facturación Total ÷ Kilos Totales Transportados.</div>
+                        <p>Indica cuántos pesos ingresan a la empresa por cada kilogramo de carga transportada. Promedio general de la empresa: <strong>$1.453 por Kg</strong>.</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Kg Promedio por Envío</h4>
+                        <div class="formula-box">Cálculo: Kilos Totales ÷ Total de Envíos.</div>
+                        <p>Peso medio de los paquetes despachados. En 2026 promedió <strong>4,10 kg por paquete</strong>.</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Toneladas Totales</h4>
+                        <div class="formula-box">Cálculo: Suma de todos los kilos transportados ÷ 1.000.</div>
+                        <p>Volumen de carga físico absoluto movilizado por la red operativa.</p>
+                    </div>
                 </div>
             </section>
 
-            <!-- SECCIÓN 6: PÁGINA 5 -->
+            <!-- PÁGINA 5: COHORTE SAME-STORE -->
             <section id="pag5" class="card doc-section">
-                <h2 class="section-header"><span>🧱</span> 6. Página 5: Cohorte Same-Store & Cascada de Crecimiento</h2>
+                <h2 class="section-header"><span>🧱</span> 5. Página 5: Cohorte Same-Store & Cascada</h2>
                 <p>
-                    Aísla el crecimiento artificial para responder a la Dirección: <em>"¿Crecimos vendiéndole más a nuestros clientes habituales o dependemos únicamente de conseguir clientes nuevos para tapar a los que se van?"</em>.
+                    Examina el origen del crecimiento de la empresa, distinguiendo entre el comportamiento de los clientes que ya operaban el año anterior frente a la incorporación de clientes nuevos y la pérdida de clientes inactivos.
                 </p>
 
                 <h3 class="sub-header">La Cascada de Crecimiento (Waterfall)</h3>
-                <pre><code>[ Base 2025: 556.590 envíos ]
-   + 67.147 envíos (Efecto Cohorte: crecimiento orgánico de los 90 clientes que operaron ambos años)
-  + 210.166 envíos (Clientes Nuevos: altas incorporadas en 2026)
-   - 12.024 envíos (Clientes Perdidos: bajas/churn que despacharon en 2025 y en 2026 hicieron 0)
--------------------------------------------------------------------------------------------------
-= [ Cierre 2026: 821.879 envíos ]  (+47,7% Crecimiento Total Empresa)</code></pre>
+                <p>
+                    El volumen total creció de <strong>556.590 envíos (2025)</strong> a <strong>821.879 envíos (2026)</strong>. La cascada descompone esa diferencia en 4 componentes:
+                </p>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Componente</th>
+                                <th>Volumen de Envíos</th>
+                                <th>Qué Significa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Base 2025</strong></td>
+                                <td>556.590 envíos</td>
+                                <td>Total de paquetes operados en el período de 2025.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Crecimiento Cohorte</strong></td>
+                                <td>+67.147 envíos</td>
+                                <td>Crecimiento de los 90 clientes habituales que operaron tanto en 2025 como en 2026.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Clientes Nuevos (Altas)</strong></td>
+                                <td>+210.166 envíos</td>
+                                <td>Volumen generado por cuentas dadas de alta a lo largo de 2026.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Clientes Perdidos (Bajas)</strong></td>
+                                <td>-12.024 envíos</td>
+                                <td>Volumen que despachaban en 2025 cuentas que en 2026 no registraron envíos.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total Cierre 2026</strong></td>
+                                <td><strong>821.879 envíos</strong></td>
+                                <td>Volumen final alcanzado en 2026 (+47,7% de crecimiento total de la empresa).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <h3 class="sub-header">YoY Nominal vs. YoY Ajustado por Días Hábiles</h3>
-                <div class="callout callout-info">
-                    <strong>¿Por qué hay dos porcentajes de crecimiento?</strong><br>
-                    * <strong>YoY Nominal (+12,33%):</strong> Compara el volumen bruto acumulado.<br>
-                    * <strong>YoY Ajustado (+11,58%):</strong> Divide el volumen por los <strong>días hábiles reales trabajados</strong> (descontando feriados y fines de semana). Muestra la aceleración diaria real de las cuentas existentes.
-                </div>
-            </section>
-
-            <!-- SECCIÓN 7: PÁGINA 6 -->
-            <section id="pag6" class="card doc-section">
-                <h2 class="section-header"><span>🔍</span> 7. Página 6: Ficha 360° / Auditoría de Clientes</h2>
-                <p>
-                    Pantalla táctica individual diseñada para que el Ejecutivo Comercial o KAM seleccione una cuenta y tenga su <strong>radiografía viva en 4 pilares</strong> antes de llamar al cliente:
-                </p>
-
                 <div class="metric-grid">
                     <div class="metric-card">
-                        <h4>1. Diagnóstico de Salud</h4>
-                        <p>Semáforo actual (🟢 🟡 🔴), meses sin aumento, % de desvío sobre lista teórica, facturación y volumen del último mes.</p>
+                        <h4>YoY % Same-Store Nominal (+12,33%)</h4>
+                        <div class="formula-box">Cálculo: (Envíos 2026 Cohorte - Envíos 2025 Cohorte) ÷ Envíos 2025 Cohorte.</div>
+                        <p>Compara directamente la cantidad de paquetes totales sumados en ambos años para los 90 clientes continuos.</p>
                     </div>
                     <div class="metric-card">
-                        <h4>2. Curva de Actividad MoM</h4>
-                        <p>Evolución mensual de paquetes despachados. Permite detectar si el cliente <strong>está fugando volumen</strong> o si está en récord operativo.</p>
-                    </div>
-                    <div class="metric-card">
-                        <h4>3. Mix Operativo</h4>
-                        <p>Distribución por servicio (Mercado Flex, Next Day, Same Day) y mix de peso (% Liviano vs. Pesado).</p>
-                    </div>
-                    <div class="metric-card">
-                        <h4>4. Calidad y SLA</h4>
-                        <p>% de cumplimiento de entrega a tiempo (SLA). Blindaje para defender el aumento si el servicio anduvo impecable (ej: 98% a tiempo).</p>
+                        <h4>YoY % Same-Store Ajustado (+11,58%)</h4>
+                        <div class="formula-box">Cálculo: Promedio de paquetes por día hábil 2026 frente a 2025.</div>
+                        <p>Normaliza el volumen dividiendo por los días laborables reales trabajados en cada año (descontando feriados y fines de semana). Refleja el ritmo operativo diario real.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- SECCIÓN 8: FÓRMULAS DAX -->
-            <section id="formulas" class="card doc-section">
-                <h2 class="section-header"><span>🧮</span> 8. Diccionario de Fórmulas DAX Principales</h2>
-                <p>Lógica de cálculo implementada en el modelo tabular de VertiPaq para auditoría técnica:</p>
+            <!-- PÁGINA 6: FICHA 360° -->
+            <section id="pag6" class="card doc-section">
+                <h2 class="section-header"><span>🔍</span> 6. Página 6: Ficha 360° / Auditoría de Clientes</h2>
+                <p>
+                    Pantalla individual donde el usuario selecciona un cliente en el buscador superior y visualiza en un solo lugar toda su información operativa y comercial consolidada.
+                </p>
 
-                <h3 class="sub-header">Meses Sin Aumento (Versión Optimizada)</h3>
-                <pre><code>Meses Sin Aumento = 
-IF (
-    NOT HASONEVALUE ( fact_envios[Cliente] ),
-    BLANK (),
-    VAR UltimaFechaGlobal = CALCULATE ( MAX ( fact_envios[Fecha Ingreso] ), ALL ( fact_envios ) )
-    VAR TablaClienteMeses = 
-        CALCULATETABLE (
-            SUMMARIZE (
-                fact_envios,
-                dim_calendario[Orden Año-Mes],
-                dim_calendario[Año-Mes],
-                "TicketMes", DIVIDE ( SUM ( fact_envios[Total] ), COUNTROWS ( fact_envios ) )
-            ),
-            ALLEXCEPT ( fact_envios, fact_envios[Cliente] ),
-            dim_calendario[Año] >= 2025
-        )
-    -- Detecta el último salto de ticket >= 4% y calcula la diferencia de meses contra la fecha global
-    ...
-)</code></pre>
-
-                <h3 class="sub-header">Rendimiento $/Kg</h3>
-                <pre><code>Rendimiento $/Kg = 
-DIVIDE ( [Facturacion Total], SUM ( fact_envios[Kg] ), 0 )</code></pre>
-
-                <h3 class="sub-header">Desvío sobre Lista Teórica B</h3>
-                <pre><code>% Desvio sobre Lista = 
-DIVIDE ( [Facturacion Total] - [Facturacion Teorica Lista], [Facturacion Teorica Lista] )</code></pre>
+                <h3 class="sub-header">Contenido de la Ficha</h3>
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <h4>1. Diagnóstico Tarifario</h4>
+                        <p>Estado en el semáforo (🟢 🟡 🔴), meses sin aumentos de tarifa, porcentaje de desvío frente a la Lista Teórica B, facturación y volumen del último mes.</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>2. Curva Mensual de Envíos</h4>
+                        <p>Gráfico con la evolución mes a mes de los paquetes despachados, permitiendo ver si la cuenta viene en expansión o desaceleración.</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>3. Mix de Servicios y Pesos</h4>
+                        <p>Desglose de los envíos por tipo de contrato (Mercado Flex, Next Day, Same Day) y proporción de paquetes livianos vs. pesados.</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>4. Nivel de Cumplimiento (SLA)</h4>
+                        <p>Porcentaje de entregas cumplidas en el plazo comprometido frente a las entregas con demoras o visitas fallidas.</p>
+                    </div>
+                </div>
             </section>
 
-            <!-- SECCIÓN 9: FAQ -->
+            <!-- PREGUNTAS FRECUENTES (FAQ) -->
             <section id="faq" class="card doc-section">
-                <h2 class="section-header"><span>❓</span> 9. Preguntas Frecuentes (FAQ Comercial)</h2>
+                <h2 class="section-header"><span>❓</span> 7. Preguntas Frecuentes (FAQ)</h2>
 
                 <div class="faq-item">
                     <div class="faq-question">
@@ -873,57 +848,47 @@ DIVIDE ( [Facturacion Total] - [Facturacion Teorica Lista], [Facturacion Teorica
                         <svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Respuesta:</strong> Porque es una herramienta de gestión del <strong>presente</strong>. El equipo comercial entra a ver a quién hay que aumentarle <em>hoy</em>. Si tuviera filtro de fecha y alguien seleccionara un mes pasado (ej: Febrero 2026), vería clientes en rojo que quizás ya fueron aumentados en Mayo, lo que generaría errores operativos graves.</p>
+                        <p><strong>Respuesta:</strong> Porque esa pantalla analiza la situación de las tarifas en el <strong>cierre actual</strong>. Si permitiera seleccionar un mes pasado (por ejemplo, enero 2026), mostraría en rojo a clientes que quizás ya recibieron aumentos en meses posteriores, lo que distorsionaría el control vigente.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>P2: ¿Por qué un cliente dice "Sin Aumento Detectado"?</span>
+                        <span>P2: ¿Qué significa que un cliente figure como "Sin Aumento Detectado"?</span>
                         <svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Respuesta:</strong> Significa que en toda la historia evaluada no se encontró ningún salto de ticket promedio mayor o igual al <strong>4%</strong> frente a su mes anterior. El cliente mantuvo una tarifa plana o variaciones ínfimas de centavos. Lleva congelado desde que inició operaciones.</p>
+                        <p><strong>Respuesta:</strong> Significa que en todo el período evaluado el sistema no registró ninguna variación intermensual en su ticket promedio mayor o igual al <strong>4%</strong>. La cuenta mantuvo una tarifa fija o con variaciones mínimas de centavos desde que comenzó a operar.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>P3: ¿Por qué hay clientes que dicen "Alta Reciente (Sept 2026)"?</span>
+                        <span>P3: ¿Qué significa que un cliente figure como "Alta Reciente"?</span>
                         <svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Respuesta:</strong> Son cuentas que comenzaron a operar hace menos de 3 meses. Al ser ingresos frescos, el sistema las considera <span class="badge badge-green">🟢 Al Día</span> o en revisión porque su tarifa fue pactada recientemente en el contrato de alta.</p>
+                        <p><strong>Respuesta:</strong> Son cuentas que comenzaron a operar hace menos de 3 meses. Al ser incorporaciones recientes, el sistema considera que su tarifa tiene vigencia plena por haber sido pactada en el acuerdo inicial de ingreso.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>P4: ¿Por qué el cliente New Motors figuraba con $0 de facturación en el último mes?</span>
+                        <span>P4: ¿De dónde surge el índice CEDOL y con qué frecuencia se publica?</span>
                         <svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Respuesta:</strong> En septiembre 2026, New Motors tuvo únicamente 2 remitos de <strong>Logística Inversa</strong> (devoluciones) que vinieron cargados a <code>$0</code>. En su mes operativo habitual previo (Agosto 2026) facturó <strong>$1.636.180</strong> con 198 paquetes. Al aplicar el filtro <code>Facturacion Ultimo Mes > 0</code> en la tabla, las cuentas sin facturación activa en el mes de corte quedan limpiamente excluidas.</p>
+                        <p><strong>Respuesta:</strong> Es elaborado mensualmente por el Centro Tecnológico de Transporte de la <strong>Universidad Tecnológica Nacional (UTN)</strong> para la Cámara Empresaria de Operadores Logísticos (CEDOL). Se publica a mes vencido (habitualmente entre el día 5 y 10 del mes siguiente).</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>P5: ¿Cómo se defiende un aumento con el índice CEDOL frente a un cliente difícil?</span>
+                        <span>P5: ¿Qué significa un "% Desvío sobre Lista" positivo o negativo?</span>
                         <svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Respuesta:</strong> Se abre la Página 3 o la Ficha 360°, se muestra la fecha del último aumento y el dato oficial de <strong>CEDOL a Recuperar %</strong>: <em>"Estimado cliente, tu tarifa está fija desde Febrero 2026, mientras que los costos oficiales de transporte auditados por la Universidad Tecnológica Nacional (UTN) para CEDOL acumularon un incremento del +21,7% en combustible y mano de obra"</em>. Es un argumento técnico neutral y homologado.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>P6: ¿Qué significa un "% Desvío sobre Lista" positivo o negativo?</span>
-                        <svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg>
-                    </div>
-                    <div class="faq-answer">
-                        <p><strong>Respuesta:</strong> Si da <strong>negativo (ej: -15%)</strong>, el cliente tiene un descuento comercial pactado del 15% por debajo de la Lista Oficial B. Si da <strong>positivo (ej: +5%)</strong>, el cliente paga un 5% por encima de la lista (por servicios especiales, seguros, o tramos de entrega diferenciales).</p>
+                        <p><strong>Respuesta:</strong> Si da <strong>negativo (ej: -15%)</strong>, el cliente abona un 15% menos que la tarifa de Lista B oficial. Si da <strong>positivo (ej: +5%)</strong>, abona una tarifa promedio un 5% por encima de la lista base (por tramos especiales, seguros o servicios complementarios).</p>
                     </div>
                 </div>
             </section>
@@ -933,11 +898,11 @@ DIVIDE ( [Facturacion Total] - [Facturacion Teorica Lista], [Facturacion Teorica
 
     <!-- Footer -->
     <footer>
-        <p><strong>Suite de Inteligencia Comercial — Logística & Distribución</strong></p>
-        <p style="margin-top: 0.35rem; font-size: 0.8rem;">Documentación generada para consulta interactiva en Power BI Desktop, Power BI Service y GitHub Pages.</p>
+        <p><strong>Suite de Business Intelligence Comercial — Logística & Distribución</strong></p>
+        <p style="margin-top: 0.25rem; font-size: 0.78rem;">Manual interactivo de consulta para Power BI y GitHub Pages.</p>
     </footer>
 
-    <!-- Script de Interactividad (Buscador, Accordion y Navegación) -->
+    <!-- Script de Interactividad (Buscador y Navegación) -->
     <script>
         // Accordion FAQ
         document.querySelectorAll('.faq-question').forEach(item => {
@@ -950,11 +915,9 @@ DIVIDE ( [Facturacion Total] - [Facturacion Teorica Lista], [Facturacion Teorica
         // Buscador interactivo
         function filterDocs() {
             const query = document.getElementById('searchInput').value.toLowerCase();
-            const sections = document.querySelectorAll('.doc-section');
             const faqItems = document.querySelectorAll('.faq-item');
             const cards = document.querySelectorAll('.metric-card');
 
-            // Filtrar FAQs
             faqItems.forEach(faq => {
                 const text = faq.innerText.toLowerCase();
                 if (text.includes(query)) {
@@ -965,7 +928,6 @@ DIVIDE ( [Facturacion Total] - [Facturacion Teorica Lista], [Facturacion Teorica
                 }
             });
 
-            // Filtrar Tarjetas de métricas
             cards.forEach(card => {
                 const text = card.innerText.toLowerCase();
                 card.style.display = text.includes(query) ? 'block' : 'none';
@@ -979,7 +941,7 @@ DIVIDE ( [Facturacion Total] - [Facturacion Teorica Lista], [Facturacion Teorica
             let current = '';
 
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 150;
+                const sectionTop = section.offsetTop - 120;
                 if (pageYOffset >= sectionTop) {
                     current = section.getAttribute('id');
                 }
