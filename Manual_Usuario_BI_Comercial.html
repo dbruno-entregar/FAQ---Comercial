@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Manual de Usuario - BI Comercial</title>
+<style>
+    body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; line-height: 1.6; color: #2c3e50; max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+    h1 { color: #1a365d; border-bottom: 3px solid #2b6cb0; padding-bottom: 10px; }
+    h2 { color: #2b6cb0; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; margin-top: 35px; }
+    h3 { color: #2d3748; margin-top: 25px; }
+    table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 14px; }
+    th, td { border: 1px solid #cbd5e0; padding: 10px 14px; text-align: left; }
+    th { background-color: #ebf8ff; color: #2b6cb0; font-weight: 600; }
+    tr:nth-child(even) { background-color: #f7fafc; }
+    blockquote { background-color: #fffaf0; border-left: 4px solid #dd6b20; margin: 20px 0; padding: 12px 18px; color: #7b341e; }
+    code { background-color: #edf2f7; color: #c53030; padding: 2px 6px; border-radius: 4px; font-family: Consolas, monospace; }
+    pre { background-color: #1a202c; color: #e2e8f0; padding: 16px; border-radius: 8px; overflow-x: auto; }
+    .badge-green { background: #c6f6d5; color: #22543d; padding: 4px 8px; border-radius: 4px; font-weight: bold; }
+    .badge-yellow { background: #fefcbf; color: #744210; padding: 4px 8px; border-radius: 4px; font-weight: bold; }
+    .badge-red { background: #fed7d7; color: #742a2a; padding: 4px 8px; border-radius: 4px; font-weight: bold; }
+    @media print {
+        body { max-width: 100%; margin: 0; padding: 15mm; font-size: 12px; }
+        h1, h2, h3 { page-break-after: avoid; }
+        table { page-break-inside: avoid; }
+    }
+</style>
+</head>
+<body><div id="content"></div>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+    const markdown = `# 📘 Manual de Usuario & Diccionario de Métricas
+## Suite de Business Intelligence Comercial — Logística & Distribución
+
+> **Versión:** 2.0  
+> **Corte de Datos:** Septiembre 2026  
+> **Audiencia:** Dirección General, Gerencia Comercial, Jefatura de Pricing, Ejecutivos de Cuenta (KAMs) y Operaciones.
+
+---
+
+## 📑 Índice de Contenidos
+
+1. [Propósito y Rutinas de Gestión](#1-propósito-y-rutinas-de-gestión)
+2. [Página 1: Facturación & Mix Comercial](#2-página-1-facturación--mix-comercial)
+3. [Página 2: Pricing & Benchmark (Tarifa vs. Costos)](#3-página-2-pricing--benchmark-tarifa-vs-costos)
+4. [Página 3: Antigüedad de Tarifas & Semáforo de Ajustes](#4-página-3-antigüedad-de-tarifas--semáforo-de-ajustes)
+5. [Página 4: Pesos & Densidad Logística](#5-página-4-pesos--densidad-logística)
+6. [Página 5: Cohorte Same-Store & Cascada de Crecimiento](#6-página-5-cohorte-same-store--cascada-de-crecimiento)
+7. [Preguntas Frecuentes (FAQ de Dirección y Ventas)](#7-preguntas-frecuentes-faq)
+8. [Cómo Activar la Ayuda Integrada (\`ℹ️\`) en Power BI](#8-cómo-activar-la-ayuda-integrada-ℹ️-en-power-bi)
+
+---
+
+## 1. Propósito y Rutinas de Gestión
+
+Este tablero no es solo un visor de ventas; es una **herramienta de control de margen, rentabilidad y negociación de tarifas en un contexto inflacionario**.
+
+### ¿Cuándo usar cada página?
+
+| Frecuencia | Página | Responsable Principal | Objetivo |
+| :--- | :--- | :--- | :--- |
+| **Semanal / Quincenal** | **Página 3: Antigüedad & Semáforo** | KAMs y Jefatura Comercial | Identificar clientes congelados y coordinar reuniones de aumento. |
+| **Cierre Mensual** | **Página 1: Facturación & Mix** | Gerencia Comercial | Evaluar cumplimiento de presupuesto, volumen y dispersión territorial. |
+| **Mensual (post-CEDOL)** | **Página 2: Pricing & Benchmark** | Pricing y Dirección | Monitorear si la tarifa de la empresa pierde o gana contra la inflación de costos. |
+| **Mensual / Operativa** | **Página 4: Pesos & Densidad** | Operaciones y Comercial | Detectar clientes con bultos pesados que pagan poco flete (\`\$/Kg\`). |
+| **Trimestral / Directorio** | **Página 5: Cohorte & Cascada** | Dirección General | Analizar si el crecimiento es genuino (clientes fieles) o si hay fuga (churn). |
+
+---
+
+## 2. Página 1: Facturación & Mix Comercial
+
+### ¿Qué preguntas responde?
+* *¿Cuánto facturamos y cuántos paquetes movimos en el mes?*
+* *¿Cuánto crecimos en facturación frente al mismo mes del año pasado?*
+* *¿Cuál es nuestro ticket promedio por paquete y cómo se distribuye entre AMBA y el Interior?*
+* *¿Qué porcentaje de la facturación concentran nuestros clientes principales (Pareto)?*
+
+### Diccionario de Métricas
+
+| Métrica | Definición en Lenguaje Humano | Interpretación / Acción |
+| :--- | :--- | :--- |
+| **Facturación Total** | Suma del monto neto facturado por los envíos del período. | Cifra bruta de venta sin IVA. |
+| **Total Envíos** | Cantidad total de paquetes/guías operadas en el período. | Indicador puro de volumen y saturación de red. |
+| **Ticket Promedio Envío** | Facturación total dividida la cantidad de envíos (\`Total \$ / Envíos\`). | Es la tarifa promedio efectiva que paga un cliente por paquete. |
+| **Facturación YoY % Nominal** | Variación porcentual de la facturación frente al mismo período del año anterior. | Mide el crecimiento total en pesos (incluye efecto volumen + efecto aumento de precios). |
+| **Ticket Promedio YoY %** | Variación porcentual del ticket unitario frente al año anterior. | Muestra cuánto aumentó el precio unitario cobrado por envío en 12 meses. |
+| **Mix AMBA vs. Interior** | Proporción de envíos y facturación según el destino geográfico. | Permite ver si el negocio se expande más en distribución urbana (AMBA) o paquetería federal (Interior). |
+
+---
+
+## 3. Página 2: Pricing & Benchmark (Tarifa vs. Costos)
+
+### ¿Qué preguntas responde?
+* *¿Nuestras tarifas acompañaron la inflación real de costos de transporte o nos quedamos atrás?*
+* *¿Cuánto descuento efectivo le estamos otorgando a los clientes respecto a la Lista Teórica Oficial B?*
+* *¿Cuál es la brecha en puntos porcentuales entre lo que aumentamos y lo que subió el índice CEDOL?*
+
+### Los 3 Índices de Comparación (Base 100 = Enero 2025)
+
+1. **Índice Tarifa Empresa:** Evolución del ticket promedio cobrado por la empresa tomando como punto de partida Enero 2025 = 100.
+2. **Índice CEDOL con Transporte:** Índice oficial elaborado por la **Universidad Tecnológica Nacional (UTN)** para la Cámara Empresaria de Operadores Logísticos. Mide la inflación real de costos del sector (combustible, mano de obra del convenio 40/89 Camioneros, neumáticos, seguros, mantenimiento de flota y amortización).
+3. **Índice IPC (INDEC):** Índice de Precios al Consumidor oficial nacional (inflación general de la economía).
+
+### Diccionario de Métricas
+
+| Métrica | Definición | Interpretación Comercial |
+| :--- | :--- | :--- |
+| **Brecha vs. CEDOL (p.p.)** | \`Índice Empresa - Índice CEDOL\`. | **Métrica Reina:** Si da **negativo** (ej. \`-39,5%\`), significa que la empresa aumentó sus tarifas 39,5 puntos menos que lo que subieron sus costos. Hay pérdida directa de margen. |
+| **Tarifa Teórica Lista B** | Tarifa que el cliente *debería haber pagado* según el tarifario de Lista B vigente para la zona y peso del bulto. | Valor de referencia estándar sin bonificaciones comerciales. |
+| **% Desvío sobre Lista** | \`(Facturación Real - Facturación Lista) / Facturación Lista\`. | **Nivel de Descuento Comercial:** Un desvío de \`-15,6%\` significa que la empresa cobra, en promedio, un 15,6% menos que el precio de lista de mostrador. |
+
+---
+
+## 4. Página 3: Antigüedad de Tarifas & Semáforo de Ajustes
+
+### ¿Qué preguntas responde?
+* *¿A qué clientes hay que llamar HOY para aumentarles la tarifa?*
+* *¿Cuántos meses lleva congelada la tarifa de cada cuenta?*
+* *¿Cuánta inflación de costos logísticos (CEDOL) acumuló el país desde que ese cliente tuvo su último ajuste?*
+* *¿Cuántos millones de pesos mensuales están en riesgo de rentabilidad?*
+
+### La Regla del Semáforo
+
+\`\`\`mermaid
+stateDiagram-v2
+    direction LR
+    state "🟢 Al Día (0 a 1 mes)" as V
+    state "🟡 En Revisión (2 a 3 meses)" as A
+    state "🔴 Crítico (>= 4 meses)" as R
+
+    V --> A: Pasa el tiempo sin ajuste
+    A --> R: Supera los 90 días
+    R --> V: Se aplica aumento >= 4%
+\`\`\`
+
+| Estado | Antigüedad | Significado Operativo | Acción Comercial Requerida |
+| :---: | :---: | :--- | :--- |
+| 🟢 **Al Día** | **0 a 1 mes** | Tuvo aumento en el mes actual o anterior (o es un alta reciente). | **Ninguna.** Mantener monitoreo regular. |
+| 🟡 **En Revisión** | **2 a 3 meses** | Se encuentra en la ventana típica de renegociación bimestral o trimestral. | **Preparar propuesta.** El KAM debe preavisar que se acerca el ajuste programado. |
+| 🔴 **Crítico** | **\$\ge 4\$ meses** | **Tarifa congelada.** La empresa está perdiendo margen neto mes a mes contra la inflación. | **Acción Inmediata.** Fijar reunión con el cliente en un plazo máximo de 7 días. |
+
+### Diccionario de Métricas de la Tabla de Negociación
+
+| Métrica | ¿Cómo se calcula? | Utilidad en la Negociación |
+| :--- | :--- | :--- |
+| **Último Mes Aumento** | Detecta el mes más reciente donde el ticket promedio del cliente subió \$\ge 4\%\$ contra su mes anterior. | Cita histórica exacta: *"Tu último aumento aplicado fue en Mayo 2026"*. |
+| **Meses Sin Aumento** | Meses calendario transcurridos desde el último aumento hasta hoy. | Demuestra la antigüedad del congelamiento (ej. 4 meses, 10 meses). |
+| **CEDOL a Recuperar %** | Inflación acumulada por el índice CEDOL desde el mes de su último ajuste hasta el último publicado. | **El argumento irrefutable:** *"Tus tarifas están fijas hace 4 meses, mientras los costos de transporte subieron un +5,8% (o +31,0%) según la UTN/CEDOL"*. |
+| **Facturación Último Mes** | Facturación del cliente en el último mes cerrado. | Priorización: define a qué clientes llamar primero por impacto económico. |
+
+---
+
+## 5. Página 4: Pesos & Densidad Logística
+
+### ¿Qué preguntas responde?
+* *¿La empresa está transportando paquetes cada vez más pesados sin cobrar más?*
+* *¿Cuánto dinero ingresa por cada kilogramo que transporta nuestra flota (\`\$/Kg\`)?*
+* *¿Qué clientes están pagando tarifas ruinosas por bultos pesados (subsidio cruzado de flete)?*
+* *¿Cómo se reparte el volumen entre paquetería liviana, mediana y pesada?*
+
+### Los 3 Segmentos de Peso
+
+1. **Liviano (\$\le 3\text{ kg}\$):** Core del e-commerce (indumentaria, calzado, celulares, cosmética). Representa el **73,4% de los envíos**, pero apenas el **25,7% de los kilos**. Altísimo rendimiento.
+2. **Medio (\$3\text{ a }10\text{ kg}\$):** Cajas medianas, pequeños electrodomésticos, repuestos. Representa el **18,1% de los envíos**.
+3. **Pesado (\$> 10\text{ kg}\$):** Bultos grandes, muebles, herramientas industriales, tambores. Representa solo el **8,5% de los envíos**, pero concentra el **48,2% de todas las toneladas** transportadas por la flota.
+
+### Diccionario de Métricas
+
+| Métrica | Definición | Interpretación |
+| :--- | :--- | :--- |
+| **Toneladas Transportadas** | Kilos totales divididos por 1.000. | Volumen físico absoluto movido por la red logística. |
+| **Kg Promedio Envío** | \`Kilos Totales / Total Envíos\`. | Peso medio del paquete. En 2026 subió a **4,10 kg (+6,8% YoY)**. |
+| **Rendimiento \$/Kg** | \`Facturación Total / Kilos Totales\`. | **Métrica de Densidad:** Cuántos pesos cobramos por cada kilo que sube a las camionetas. Promedio empresa: **\`\$ 1.453 / Kg\`**. |
+
+> [!WARNING]
+> **Alerta de Subsidio de Flete:**
+> Clientes como *Aguirrezabala* mueven paquetes de **108 kg promedio** a solo **\`\$ 294 / Kg\`**, o *Mexx* que mueve paquetes de **10 kg promedio** a **\`\$ 566 / Kg\`**. Comparado con cuentas de paquetería liviana que rinden **\`\$ 3.000 a \$ 15.000 / Kg\`**, estos clientes pesados saturan el espacio físico de los utilitarios con tarifas desfasadas.
+
+---
+
+## 6. Página 5: Cohorte Same-Store & Cascada de Crecimiento
+
+### ¿Qué preguntas responde?
+* *¿Cuánto crecimos vendiéndole a los mismos clientes que ya teníamos el año pasado?*
+* *¿Cuánto volumen aportó el equipo de ventas con cuentas nuevas?*
+* *¿Cuánto volumen perdimos por clientes que dejaron de operar con nosotros (churn)?*
+
+### La Descomposición en Cascada (Waterfall)
+
+El crecimiento de **556.590 envíos (2025)** a **821.879 envíos (2026)** se explica en 4 bloques:
+
+\`\`\`
+[ Base 2025: 556.590 envíos ]
+   + 67.147  (Efecto Cohorte: crecimiento orgánico de los 90 clientes que operaron en ambos años)
+  + 210.166  (Clientes Nuevos: altas captadas en 2026)
+   - 12.024  (Clientes Perdidos: bajas de cuentas que enviaban en 2025 y en 2026 hicieron 0)
+-------------------------------------------------------------------------------------------------
+= [ Total 2026: 821.879 envíos ] (+47,7% Crecimiento Total Empresa)
+\`\`\`
+
+### Diccionario de Métricas
+
+| Métrica | Definición | Interpretación |
+| :--- | :--- | :--- |
+| **Cohorte Same-Store** | Subconjunto de **90 clientes** que registraron envíos tanto en 2025 como en 2026. | Aisla el efecto de "clientes nuevos" para medir la salud orgánica de la cartera base. |
+| **Envios YoY % SameStore (Nominal)** | Crecimiento directo de paquetes de los 90 clientes: \`(611k - 545k) / 545k = +12,33%\`. | Mide cuántos paquetes más enviaron los clientes existentes. |
+| **Envios YoY % SameStore Ajustado** | Crecimiento promedio diario normalizado por **días hábiles y feriados**: \`+11,58%\`. | **Métrica depurada:** En 2026 hubo diferente cantidad de días hábiles. Este número refleja el ritmo de operación diario real. |
+| **Clientes Nuevos (Altas)** | Envíos generados por clientes que tuvieron su primer envío en 2026. | Mide la efectividad del equipo de ventas en adquisición. |
+| **Clientes Perdidos (Churn)** | Envíos que hacían en 2025 clientes que no registraron ningún envío en 2026. | Mide el volumen fugado por deserción o pérdida de cuentas. |
+
+---
+
+## 7. Preguntas Frecuentes (FAQ)
+
+### P1: ¿Por qué en la Página 3 no hay filtro de fecha?
+> **R:** Porque es una **herramienta operativa del presente**. El equipo comercial entra para ver a quién hay que aumentarle **HOY**. Si tuviera filtro de fecha y alguien seleccionara un mes pasado (ej. Marzo 2026), vería clientes en rojo que quizás ya fueron aumentados en Mayo, generando errores de gestión.
+
+### P2: ¿Por qué un cliente dice "Sin Aumento Detectado"?
+> **R:** Significa que en todos los meses evaluados no se encontró ningún salto de ticket mayor o igual al **4%**. El cliente mantuvo una tarifa plana o variaciones mínimas de centavos. Lleva congelado desde que inició operaciones.
+
+### P3: ¿Por qué hay clientes que dicen "Alta Reciente (Sept 2026)"?
+> **R:** Son cuentas nuevas que se dieron de alta hace menos de 3 meses (ej. *BFE* o *Bidcom*). Al ser nuevas, se muestran en verde o amarillo porque su tarifa fue negociada recientemente al momento del alta.
+
+### P4: ¿De dónde sale el índice CEDOL y por qué septiembre aparece en 0,0%?
+> **R:** El índice CEDOL lo publica mensualmente la **UTN** a mes vencido (usualmente entre el día 5 y 10 del mes siguiente). Septiembre 2026 aún no fue publicado por la UTN, por lo que el último dato oficial disponible es Agosto 2026. Para clientes con aumento en septiembre, su atraso frente al último CEDOL oficial es lógicamente \`0,0%\`.
+
+### P5: ¿Por qué en la tabla de Cohorte el YoY nominal da 12,3% y el ajustado 11,6%?
+> **R:** El **12,3%** compara paquetes totales sumados. El **11,6%** divide los paquetes de cada año por la cantidad de **días hábiles reales** de cada período. Como en 2026 hubo más días laborales entre enero y septiembre, cada día laborable promedio creció un 11,6%.
+
+### P6: ¿Qué significa que un cliente tenga \`% Desvío sobre Lista\` negativo?
+> **R:** Significa que se le cobra **por debajo de la tarifa oficial de Lista B**. Si dice \`-25%\`, significa que el cliente tiene un descuento comercial acordado del 25% respecto al precio de lista.
+
+---
+
+
+`;
+    document.getElementById('content').innerHTML = marked.parse(markdown);
+</script>
+</body>
+</html>
