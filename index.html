@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual de Usuario & Guía de Métricas — BI Comercial</title>
+    <title>Manual Comercial & Guía de Métricas — BI Comercial</title>
     <style>
         :root {
             --primary: #0f172a;
@@ -50,7 +50,7 @@
             line-height: 1.6;
         }
 
-        /* 1. Header Compacto */
+        /* Header */
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #ffffff;
@@ -336,34 +336,7 @@
             border: 1px solid #bfdbfe;
         }
 
-        /* Callouts */
-        .callout {
-            border-radius: 6px;
-            padding: 0.85rem 1rem;
-            margin: 1rem 0;
-            font-size: 0.88rem;
-            border-left: 4px solid;
-        }
-
-        .callout-info {
-            background-color: #eff6ff;
-            border-color: #3b82f6;
-            color: #1e40af;
-        }
-
-        .callout-warning {
-            background-color: #fffbeb;
-            border-color: #f59e0b;
-            color: #92400e;
-        }
-
-        .callout-success {
-            background-color: #ecfdf5;
-            border-color: #10b981;
-            color: #065f46;
-        }
-
-        /* Metric Grid & Formula Cards */
+        /* Metric Grid & Intuitive Formula Cards */
         .metric-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -387,16 +360,16 @@
         }
 
         .metric-card .formula-box {
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             color: var(--accent);
             font-weight: 600;
             background: var(--accent-light);
-            padding: 0.35rem 0.6rem;
+            padding: 0.45rem 0.65rem;
             border-radius: 4px;
             display: block;
             margin-bottom: 0.5rem;
             border-left: 2px solid var(--accent);
-            word-break: break-word;
+            line-height: 1.45;
         }
 
         .metric-card p {
@@ -480,12 +453,12 @@
 </head>
 <body>
 
-    <!-- Header Compacto -->
+    <!-- Header -->
     <header>
         <div class="header-container">
             <div class="header-title">
-                <h1><span>📦</span> BI Comercial — Guía de Métricas & Ayuda</h1>
-                <span class="tag">Versión 2.2</span>
+                <h1><span>📦</span> BI Comercial — Manual de Usuario & Guía de Métricas</h1>
+                <span class="tag">Uso Comercial y Directivo</span>
             </div>
             <div class="search-box">
                 <svg viewBox="0 0 24 24"><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"/></svg>
@@ -496,7 +469,7 @@
 
     <div class="layout-container">
         
-        <!-- Menú Lateral Fijo (Índice de Navegación) -->
+        <!-- Menú Lateral -->
         <aside class="sidebar">
             <div class="sidebar-title">Hojas del Dashboard</div>
             <nav>
@@ -520,57 +493,57 @@
             <section id="pag1" class="card doc-section">
                 <h2 class="section-header"><span>📊</span> 1. Facturación</h2>
                 <p>
-                    <strong>Descripción general:</strong> Es la pantalla principal de monitoreo de ingresos de la compañía. Presenta una vista ejecutiva de la facturación monetaria neta, el volumen físico de envíos despachados y la tarifa unitaria promedio resultante (ticket promedio), con desglose multinivel por jerarquía temporal, distribución geográfica y apertura individual por cliente.
+                    <strong>Descripción general:</strong> Es la pantalla principal de monitoreo de ingresos de la compañía. Presenta una vista ejecutiva de la facturación neta, la cantidad de envíos despachados y la tarifa promedio resultante por paquete (ticket promedio), permitiendo analizar el negocio en distintas ventanas de tiempo, por zonas geográficas y cliente por cliente.
                 </p>
 
                 <h3 class="sub-header">Usos y Aplicaciones</h3>
                 <ul>
-                    <li><strong>Monitoreo temporal de ingresos:</strong> Permite evaluar el comportamiento de la facturación en distintos niveles de agregación (Año, Semestre, Trimestre, Año-Mes, Quincena y Fecha diaria).</li>
-                    <li><strong>Análisis territorial:</strong> Identifica la distribución de los ingresos monetarios entre el Área Metropolitana de Buenos Aires (AMBA) y el Interior del país, detallando cada zona logística.</li>
-                    <li><strong>Auditoría de concentración por cliente:</strong> Permite ordenar y comparar a cada cliente según su volumen de envíos, su facturación neta, su ticket promedio y su crecimiento interanual.</li>
-                    <li><strong>Filtrado cruzado multidimensional:</strong> Cuenta con segmentadores interactivos para aislar datos por Tipo de Contrato, Intervalo de Fechas, Cliente y Región / Zona.</li>
+                    <li><strong>Seguimiento de ingresos y volumen:</strong> Permite evaluar la marcha de la facturación y la cantidad de envíos a nivel anual, semestral, trimestral, mensual, quincenal y diario.</li>
+                    <li><strong>Apertura territorial:</strong> Identifica cuánto dinero y volumen se concentra en el Área Metropolitana de Buenos Aires (AMBA) frente a las regiones del Interior del país, detallando cada zona operativa.</li>
+                    <li><strong>Auditoría de concentración por cliente:</strong> Permite ordenar a cada cuenta según su facturación neta, su volumen de paquetes despachados, su precio promedio unitario y su tasa de crecimiento interanual.</li>
+                    <li><strong>Filtros interactivos:</strong> Permite aislar datos por Tipo de Contrato, Rango de Fechas, Cliente específico y Región o Zona logística.</li>
                 </ul>
 
                 <h3 class="sub-header">Métricas Principales y Cómo se Calculan</h3>
                 <div class="metric-grid">
                     <div class="metric-card">
                         <h4>Facturación Total</h4>
-                        <div class="formula-box">Cálculo: SUM(fact_envios[Total])</div>
-                        <p>Total de dinero neto facturado por los servicios de transporte y distribución en el período seleccionado, sin considerar IVA ni conceptos extraordinarios.</p>
+                        <div class="formula-box">Cálculo: Suma de todos los importes netos facturados por servicios de distribución en el período.</div>
+                        <p>Total de dinero neto facturado por la empresa, sin incluir IVA ni cargos extraordinarios.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Total Envíos</h4>
-                        <div class="formula-box">Cálculo: DISTINCTCOUNT(fact_envios[Código])</div>
-                        <p>Cantidad de envíos o guías únicas procesadas. Representa el volumen de operaciones individuales de transporte despachadas.</p>
+                        <div class="formula-box">Cálculo: Cantidad total de guías o despachos únicos procesados.</div>
+                        <p>Indicador de volumen físico que mide cuántos envíos individuales fueron transportados.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Ticket Promedio Envío</h4>
-                        <div class="formula-box">Cálculo: Facturación Total ÷ Total Envíos</div>
-                        <p>Ingreso promedio obtenido por cada envío individual despachado. Sintetiza la tarifa media efectiva percibida por la empresa.</p>
+                        <div class="formula-box">Cálculo: Facturación Total dividida por el Total de Envíos.</div>
+                        <p>Precio unitario promedio que la empresa percibe por cada paquete despachado.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Facturación YoY % Nominal</h4>
-                        <div class="formula-box">Cálculo: (Facturación Actual - Facturación Año Anterior) ÷ Facturación Año Anterior</div>
-                        <p>Variación porcentual interanual en pesos respecto al mismo período del año anterior. Refleja el crecimiento monetario conjunto de volumen y precio.</p>
+                        <div class="formula-box">Cálculo: Variación porcentual de la facturación actual respecto al mismo período del año anterior.</div>
+                        <p>Mide cuánto crecieron los ingresos en pesos frente al año pasado, combinando el efecto del volumen y de los aumentos de tarifas.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Ticket Promedio YoY %</h4>
-                        <div class="formula-box">Cálculo: (Ticket Promedio Actual - Ticket Año Anterior) ÷ Ticket Año Anterior</div>
-                        <p>Variación porcentual del ticket medio por envío respecto al mismo período del año anterior. Expresa el traslado interanual de precios por paquete.</p>
+                        <div class="formula-box">Cálculo: Variación porcentual del precio promedio por envío frente al año anterior.</div>
+                        <p>Refleja el incremento interanual en la tarifa promedio por paquete cobrada a los clientes.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Distribución por Zona</h4>
-                        <div class="formula-box">Cálculo: SUM(fact_envios[Total]) agrupado por Región y Zona</div>
-                        <p>Monto monetario y participación relativa de los ingresos generados en cada una de las zonas geográficas operativas.</p>
+                        <div class="formula-box">Cálculo: Facturación y porcentaje correspondiente a cada región y zona logística.</div>
+                        <p>Participación monetaria de cada área geográfica sobre el total facturado por la compañía.</p>
                     </div>
                 </div>
 
                 <h3 class="sub-header">Cómo Interpretar los Datos</h3>
                 <ul>
-                    <li><strong>Crecimiento nominal vs. Crecimiento físico:</strong> Si la facturación nominal crece de manera pronunciada pero el total de envíos se mantiene constante o disminuye, el aumento de ingresos obedece a subas de tarifas unitarias o a un cambio en el mix hacia servicios de mayor valor, no a una expansión del volumen físico de operaciones.</li>
-                    <li><strong>Evolución temporal combinada:</strong> En el gráfico principal, las barras representan la facturación monetaria y la línea representa la variación porcentual interanual del ticket promedio. Cuando ambas curvas se mueven en sincronía, los aumentos de facturación están explicados primordialmente por ajustes en el precio unitario.</li>
-                    <li><strong>Dispersión por zonas:</strong> Las zonas del Interior suelen registrar un ticket promedio más elevado que las zonas de AMBA debido a los mayores costos kilométricos de larga distancia. Un aumento en la participación del Interior eleva naturalmente el ticket promedio global.</li>
-                    <li><strong>Matriz de clientes:</strong> Permite contrastar cuentas que aportan alta masa crítica de volumen físico frente a cuentas de volumen moderado pero alto valor unitario por paquete.</li>
+                    <li><strong>Crecimiento en pesos vs. Crecimiento en volumen:</strong> Si la facturación nominal crece de manera importante pero la cantidad de envíos se mantiene igual o baja, el aumento de los ingresos responde a traslados de precios por inflación o a un mix de servicios más caros, y no a una mayor cantidad de paquetes en la calle.</li>
+                    <li><strong>Lectura del gráfico temporal:</strong> Las columnas muestran los importes facturados y la línea representa la variación del precio promedio por paquete. Si ambas curvas suben juntas, el aumento de ingresos está impulsado por subas de tarifas.</li>
+                    <li><strong>Diferencias por zona:</strong> Las entregas al Interior suelen mostrar un ticket promedio más elevado que las de AMBA debido a las mayores distancias y costos de transporte. Un mayor peso del Interior eleva naturalmente el ticket promedio general.</li>
+                    <li><strong>Comportamiento por cliente:</strong> Permite distinguir clientes masivos de paquetería urbana (muchos paquetes a tarifas unitarias bajas) de cuentas que mueven menor volumen pero a tarifas unitarias más altas.</li>
                 </ul>
             </section>
 
@@ -578,16 +551,15 @@
             <section id="pag2" class="card doc-section">
                 <h2 class="section-header"><span>📈</span> 2. Precios e Índices</h2>
                 <p>
-                    <strong>Descripción general:</strong> Analiza la evolución de los precios de la empresa frente a los índices oficiales de inflación general (IPC) y de costos logísticos sectoriales (CEDOL Con Transporte), tomando como referencia Base 100 en Enero 2025. Asimismo, audita el desvío de la facturación real frente a los valores teóricos de la lista de precios oficial.
+                    <strong>Descripción general:</strong> Evalúa si las tarifas promedio cobradas por la empresa acompañaron el ritmo de la inflación general (IPC) y de los costos logísticos oficiales del sector (CEDOL Con Transporte), tomando como punto de partida enero de 2025. Además, audita el desvío entre lo que se cobra en la práctica y lo que indica la lista oficial de precios.
                 </p>
 
                 <h3 class="sub-header">Usos y Aplicaciones</h3>
                 <ul>
-                    <li><strong>Monitoreo de curvas de inflación y costos:</strong> Permite comparar mes a mes si el ticket promedio de la compañía acompañó, superó o quedó rezagado respecto a la evolución de los costos del transporte de cargas y del costo de vida.</li>
-                    <li><strong>Medición de la brecha tarifaria:</strong> Cuantifica en puntos porcentuales la diferencia acumulada entre el índice de tarifas de la empresa y el índice CEDOL.</li>
-                    <li><strong>Consulta de mes cerrado:</strong> La tarjeta ejecutiva "Foto Último Mes Cerrado" expone las métricas correspondientes al último mes con datos oficiales consolidados de CEDOL.</li>
-                    <li><strong>Auditoría de desvíos frente a precios de lista:</strong> Determina la diferencia monetaria y porcentual entre la tarifa cobrada a cada cliente y la tarifa teórica de la lista de precios de referencia.</li>
-                    <li><strong>Apertura por tramo y zona:</strong> Permite segmentar el desvío por región, zona operativa y tramo tarifario contratado.</li>
+                    <li><strong>Control de atraso tarifario:</strong> Compara mes a mes si el precio promedio por paquete de la empresa creció por encima, a la par o por debajo de los costos de transporte y de la inflación.</li>
+                    <li><strong>Medición de la brecha de costos:</strong> Cuantifica en puntos porcentuales la diferencia acumulada entre la tarifa de la empresa y el índice oficial de costos logísticos (CEDOL).</li>
+                    <li><strong>Resumen del último mes cerrado:</strong> Tarjeta ejecutiva ("Foto Último Mes Cerrado") que expone la situación del mes más reciente que cuenta con datos oficiales publicados.</li>
+                    <li><strong>Auditoría de precios de lista:</strong> Determina la diferencia en pesos y en porcentaje entre la tarifa efectivamente cobrada y la tarifa teórica de lista, cliente por cliente y zona por zona.</li>
                 </ul>
 
                 <h3 class="sub-header">Los 3 Índices de Comparación (Base 100 = Enero 2025)</h3>
@@ -596,25 +568,25 @@
                         <thead>
                             <tr>
                                 <th>Indicador</th>
-                                <th>Fuente de Datos</th>
-                                <th>Alcance y Metodología</th>
+                                <th>Origen de los Datos</th>
+                                <th>Qué Representa</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><strong>Índice Tarifa Empresa</strong></td>
                                 <td>Facturación interna de la empresa</td>
-                                <td>Evolución del ticket promedio efectivo por paquete de la compañía, partiendo de 100 en enero 2025: <code>(Ticket Actual - Ticket Ene 25) ÷ Ticket Ene 25</code>.</td>
+                                <td>Evolución del ticket promedio cobrado por paquete, partiendo con valor 100 en enero de 2025.</td>
                             </tr>
                             <tr>
                                 <td><strong>Índice CEDOL Con Transporte</strong></td>
                                 <td>Cámara CEDOL / Universidad Tecnológica Nacional (UTN)</td>
-                                <td>Índice de costos del autotransporte de cargas. Refleja la variación ponderada de mano de obra (convenio 40/89), gasoil, neumáticos, seguros, mantenimiento y amortización vehicular.</td>
+                                <td>Inflación oficial de costos del transporte de cargas: mide los aumentos de sueldos de choferes (convenio 40/89), gasoil, neumáticos, seguros, mantenimiento de vehículos y amortización.</td>
                             </tr>
                             <tr>
                                 <td><strong>Índice IPC</strong></td>
                                 <td>INDEC</td>
-                                <td>Índice de Precios al Consumidor. Mide la inflación general de precios minoristas de la economía argentina.</td>
+                                <td>Inflación general de precios de la economía argentina (Índice de Precios al Consumidor).</td>
                             </tr>
                         </tbody>
                     </table>
@@ -623,34 +595,34 @@
                 <h3 class="sub-header">Métricas Principales y Cómo se Calculan</h3>
                 <div class="metric-grid">
                     <div class="metric-card">
-                        <h4>Brecha vs. CEDOL %</h4>
-                        <div class="formula-box">Cálculo: Índice Tarifa Empresa Base 100 - Índice CEDOL</div>
-                        <p>Diferencia aritmética en puntos porcentuales entre la variación acumulada del ticket de la empresa y la variación del índice de costos logísticos oficiales.</p>
+                        <h4>Brecha vs. CEDOL (en puntos)</h4>
+                        <div class="formula-box">Cálculo: Variación acumulada de la Tarifa de la Empresa menos variación del Índice CEDOL.</div>
+                        <p>Diferencia directa entre el ritmo al que aumentaron las tarifas de la empresa y el ritmo al que subieron los costos de transporte oficiales desde enero 2025.</p>
                     </div>
                     <div class="metric-card">
-                        <h4>Facturación Teórica Lista</h4>
-                        <div class="formula-box">Cálculo: SUM(fact_envios[Tarifa_Teorica])</div>
-                        <p>Monto que se habría facturado si cada paquete despachado se hubiera cobrado a la tarifa oficial de Lista B correspondiente a su zona, peso y tramo, sin descuentos.</p>
+                        <h4>Facturación Teórica de Lista</h4>
+                        <div class="formula-box">Cálculo: Suma de la tarifa de lista oficial correspondiente a cada paquete según su peso, zona y tramo.</div>
+                        <p>Monto que la empresa habría recaudado si a cada paquete se le hubiera cobrado el precio de lista de mostrador sin descuentos.</p>
                     </div>
                     <div class="metric-card">
-                        <h4>Tarifa Promedio Lista</h4>
-                        <div class="formula-box">Cálculo: Facturación Teórica Lista ÷ Total Envíos</div>
-                        <p>Tarifa unitaria teórica promedio por paquete según los precios de lista oficiales.</p>
+                        <h4>Tarifa Promedio de Lista</h4>
+                        <div class="formula-box">Cálculo: Facturación Teórica de Lista dividida por el Total de Envíos.</div>
+                        <p>Precio promedio oficial por paquete según la lista de precios de referencia de la empresa.</p>
                     </div>
                     <div class="metric-card">
-                        <h4>Desvío Tarifa $</h4>
-                        <div class="formula-box">Cálculo: Facturación Total - Facturación Teórica Lista</div>
-                        <p>Diferencia absoluta en pesos entre lo efectivamente facturado y lo que correspondía según la lista oficial.</p>
+                        <h4>Desvío Tarifa en Pesos</h4>
+                        <div class="formula-box">Cálculo: Facturación Real cobrada menos Facturación Teórica de Lista.</div>
+                        <p>Diferencia total en dinero entre lo facturado en la realidad y lo que marcaba la lista de precios oficial.</p>
                     </div>
                     <div class="metric-card">
                         <h4>% Desvío sobre Lista</h4>
-                        <div class="formula-box">Cálculo: Desvío Tarifa $ ÷ Facturación Teórica Lista</div>
-                        <p>Porcentaje relativo de desvío de la tarifa cobrada respecto a la lista oficial. Expresa bonificaciones o recargos promedio.</p>
+                        <div class="formula-box">Cálculo: Desvío en pesos dividido por la Facturación Teórica de Lista.</div>
+                        <p>Porcentaje de descuento o recargo promedio con el que opera cada cliente o zona respecto a la lista oficial.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Foto Último Mes Cerrado</h4>
-                        <div class="formula-box">Cálculo: Métricas filtradas al último mes con índice CEDOL publicado</div>
-                        <p>Tarjeta resumen que expone Ticket Promedio, Tarifa de Lista, % Desvío y Brecha vs. CEDOL correspondientes al mes cerrado más reciente.</p>
+                        <div class="formula-box">Cálculo: Resumen de las métricas clave filtradas al último mes con datos publicados de CEDOL.</div>
+                        <p>Muestra el ticket promedio, la tarifa de lista, el porcentaje de desvío y la brecha frente a costos en el último cierre consolidado.</p>
                     </div>
                 </div>
 
@@ -658,15 +630,15 @@
                 <ul>
                     <li><strong>Brecha vs. CEDOL:</strong>
                         <ul>
-                            <li><strong>Brecha negativa (ej: -25 p.p.):</strong> Indica que la tarifa promedio de la empresa aumentó 25 puntos porcentuales menos que el costo de transporte medido por CEDOL desde enero 2025.</li>
-                            <li><strong>Brecha en 0 p.p.:</strong> Indica que las tarifas medias acompañaron de manera idéntica el ritmo de suba de costos logísticos.</li>
-                            <li><strong>Brecha positiva (ej: +5 p.p.):</strong> Indica que las tarifas medias crecieron por encima del índice de costos en ese período.</li>
+                            <li><strong>Brecha negativa (ej: -25 puntos porcentuales):</strong> Significa que los costos logísticos crecieron 25 puntos más que las tarifas promedio de la empresa desde enero de 2025, evidenciando un retraso frente a la inflación de costos.</li>
+                            <li><strong>Brecha en 0 puntos:</strong> Indica que las tarifas de la empresa acompañaron de manera exacta la evolución de los costos del transporte.</li>
+                            <li><strong>Brecha positiva (ej: +5 puntos porcentuales):</strong> Refleja que las tarifas promedio aumentaron por encima de la inflación de costos en ese lapso.</li>
                         </ul>
                     </li>
-                    <li><strong>% Desvío sobre Lista:</strong>
+                    <li><strong>Desvío sobre Lista:</strong>
                         <ul>
-                            <li><strong>Valor negativo (ej: -15%):</strong> Refleja que el cliente o zona opera con una tarifa un 15% inferior a la lista oficial de precios de referencia.</li>
-                            <li><strong>Valor positivo (ej: +5%):</strong> Refleja que la tarifa facturada se encuentra por encima del precio base de lista (por conceptos como tramos especiales, seguros declarados o adicionales de distribución).</li>
+                            <li><strong>Porcentaje negativo (ej: -15%):</strong> Significa que el cliente opera con una tarifa un 15% por debajo de la lista oficial de precios (bonificación o precio especial).</li>
+                            <li><strong>Porcentaje positivo (ej: +5%):</strong> Refleja que el cliente abona una tarifa promedio un 5% por encima de la lista base (por tramos especiales, seguros declarados o adicionales de distribución).</li>
                         </ul>
                     </li>
                 </ul>
@@ -676,15 +648,15 @@
             <section id="pag3" class="card doc-section">
                 <h2 class="section-header"><span>🚦</span> 3. Antigüedad Tarifas & Semáforo Tarifario</h2>
                 <p>
-                    <strong>Descripción general:</strong> Realiza una auditoría sobre el estado de actualización de las tarifas en la cartera de clientes activa en el último mes cerrado. Clasifica a cada cuenta mediante un semáforo (Verde, Amarillo, Rojo) según la cantidad de meses transcurridos desde su último ajuste tarifario registrado.
+                    <strong>Descripción general:</strong> Tablero de auditoría que evalúa la vigencia de las tarifas cobradas a los clientes que operaron en el último mes cerrado. Clasifica a cada cliente con un semáforo de colores (Verde, Amarillo, Rojo) según la cantidad de meses que lleva sin recibir una actualización de precios.
                 </p>
 
                 <h3 class="sub-header">Usos y Aplicaciones</h3>
                 <ul>
-                    <li><strong>Diagnóstico de vigencia de tarifas:</strong> Permite consultar el estado de actualización de cada cuenta que registró envíos en el cierre mensual más reciente.</li>
-                    <li><strong>Medición de facturación por estado:</strong> Cuantifica qué proporción de los ingresos mensuales totales corresponde a clientes en estado Al Día, En Revisión o Crítico.</li>
-                    <li><strong>Identificación de cuentas críticas principales:</strong> Muestra el Top 10 de clientes en semáforo rojo que concentran el mayor volumen de facturación mensual.</li>
-                    <li><strong>Auditoría individual de fechas y costos:</strong> Permite visualizar para cada cuenta la fecha de su último aumento detectado, los meses sin incremento y el porcentaje de inflación de costos acumulado por CEDOL en ese lapso.</li>
+                    <li><strong>Auditoría de vigencia de precios:</strong> Consulta inmediata del estado de tarifas de todos los clientes activos del último mes.</li>
+                    <li><strong>Concentración de ingresos por estado:</strong> Cuantifica qué porcentaje de la facturación mensual proviene de cuentas al día, en revisión o con tarifas congeladas.</li>
+                    <li><strong>Top 10 de clientes críticos:</strong> Identifica a las 10 cuentas en estado crítico que mueven la mayor cantidad de dinero mensual.</li>
+                    <li><strong>Ficha individual por cliente:</strong> Permite consultar la fecha exacta del último aumento detectado, los meses sin aumentos y cuánto subieron los costos de transporte (CEDOL) mientras la tarifa estuvo fija.</li>
                 </ul>
 
                 <h3 class="sub-header">Criterio de Clasificación del Semáforo</h3>
@@ -694,24 +666,24 @@
                             <tr>
                                 <th>Estado</th>
                                 <th>Meses Sin Aumento</th>
-                                <th>Criterio Lógico en el Modelo</th>
+                                <th>Criterio y Definición</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><span class="badge badge-green">🟢 Al Día</span></td>
                                 <td><strong>0 a 1 mes</strong></td>
-                                <td>Cuentas con aumento registrado en el mes actual o en el mes previo, o clientes dados de alta hace menos de 90 días (etiquetados como "Alta Reciente").</td>
+                                <td>Cuentas con aumento registrado en el mes actual o en el anterior, o clientes que comenzaron a operar hace menos de 90 días (etiquetados como "Alta Reciente").</td>
                             </tr>
                             <tr>
                                 <td><span class="badge badge-yellow">🟡 A Revisar</span></td>
                                 <td><strong>2 a 3 meses</strong></td>
-                                <td>Cuentas cuya tarifa permanece sin cambios desde hace 2 o 3 meses calendario (intervalo habitual de revisión bimestral o trimestral).</td>
+                                <td>Cuentas que llevan entre 2 y 3 meses sin variaciones en sus precios (ventana habitual de revisión bimestral o trimestral).</td>
                             </tr>
                             <tr>
                                 <td><span class="badge badge-red">🔴 Crítico</span></td>
                                 <td><strong>4 meses o más</strong></td>
-                                <td>Cuentas cuya tarifa no registra incrementos desde hace 4 meses o más, o cuentas con más de 3 meses de operación sin aumentos detectados.</td>
+                                <td>Cuentas cuya tarifa permanece sin cambios hace 4 meses o más, o cuentas con más de 3 meses de operación donde nunca se registró un aumento.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -721,42 +693,42 @@
                 <div class="metric-grid">
                     <div class="metric-card">
                         <h4>Último Mes Aumento</h4>
-                        <div class="formula-box">Cálculo: Último mes con variación intermensual de ticket ≥ 4%</div>
-                        <p>Mes calendario en el que el ticket promedio del cliente registró un aumento igual o mayor al 4% respecto al mes anterior. Si la cuenta opera hace ≤ 3 meses, figura como <code>Alta Reciente (Mes)</code>; si lleva más de 3 meses sin variaciones ≥ 4%, figura como <code>Sin Aumento Detectado</code>.</p>
+                        <div class="formula-box">Cálculo: Mes más reciente donde el ticket promedio del cliente subió un 4% o más frente a su mes previo.</div>
+                        <p>Fecha del último incremento tarifario detectado por el sistema. Si la cuenta opera hace 3 meses o menos figura como <code>Alta Reciente</code>; si opera hace más de 3 meses sin ningún salto de al menos 4% figura como <code>Sin Aumento Detectado</code>.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Meses Sin Aumento</h4>
-                        <div class="formula-box">Cálculo: Conteo de meses calendario desde el último aumento hasta hoy</div>
-                        <p>Cantidad de meses que lleva congelado el ticket promedio del cliente respecto al mes de cierre más reciente.</p>
+                        <div class="formula-box">Cálculo: Cantidad de meses transcurridos desde el último aumento registrado hasta la fecha de cierre.</div>
+                        <p>Indica cuántos meses lleva congelada la tarifa del cliente respecto al cierre mensual analizado.</p>
                     </div>
                     <div class="metric-card">
                         <h4>CEDOL a Recuperar %</h4>
-                        <div class="formula-box">Cálculo: (CEDOL Actual - CEDOL Mes Aumento) ÷ CEDOL Mes Aumento</div>
-                        <p>Inflación acumulada en el índice CEDOL Con Transporte desde el mes del último aumento del cliente hasta el último mes publicado de CEDOL. Expresa el encarecimiento de los costos de transporte ocurrido mientras la tarifa permaneció fija.</p>
+                        <div class="formula-box">Cálculo: Inflación acumulada por el índice CEDOL desde el mes del último aumento del cliente hasta hoy.</div>
+                        <p>Expresa con exactitud cuánto aumentaron los costos oficiales del transporte de cargas mientras la tarifa del cliente se mantuvo fija.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Clientes Activos Mes</h4>
-                        <div class="formula-box">Cálculo: Conteo de clientes con facturación > $0 en el último mes cerrado</div>
-                        <p>Cantidad de cuentas que registraron operaciones en el mes analizado (descarta cuentas inactivas o dadas de baja en años anteriores).</p>
+                        <div class="formula-box">Cálculo: Conteo de clientes que tuvieron facturación mayor a $0 en el último mes cerrado.</div>
+                        <p>Cantidad de cuentas con operaciones vigentes en el mes analizado (descarta cuentas inactivas o dadas de baja en años anteriores).</p>
                     </div>
                     <div class="metric-card">
                         <h4>% Facturación por Estado</h4>
-                        <div class="formula-box">Cálculo: Facturación por Estado ÷ Facturación Total del Último Mes</div>
-                        <p>Participación porcentual de la facturación mensual agrupada en cada estado del semáforo (% Al Día, % En Revisión y % Crítico).</p>
+                        <div class="formula-box">Cálculo: Facturación de clientes en cada estado del semáforo dividida por la facturación total del mes.</div>
+                        <p>Proporción de los ingresos del mes que corresponde a clientes agrupados en Verde (Al Día), Amarillo (En Revisión) y Rojo (Crítico).</p>
                     </div>
                     <div class="metric-card">
                         <h4>Top 10 Clientes Críticos</h4>
-                        <div class="formula-box">Cálculo: Clientes en semáforo rojo ordenados por Facturación Último Mes</div>
-                        <p>Ranking de las 10 cuentas en estado crítico que concentran la mayor cantidad de pesos facturados en el mes.</p>
+                        <div class="formula-box">Cálculo: Clientes en semáforo rojo ordenados de mayor a menor por su facturación del último mes.</div>
+                        <p>Ranking de las 10 cuentas con tarifas congeladas hace 4 meses o más que representan mayor facturación para la empresa.</p>
                     </div>
                 </div>
 
                 <h3 class="sub-header">Cómo Interpretar los Datos</h3>
                 <ul>
-                    <li><strong>Naturaleza de la pantalla (Foto de cierre):</strong> No incluye segmentador de fechas porque evalúa la situación vigente en el último cierre mensual cerrado. Consultar meses anteriores mostraría datos históricos que no reflejan el estado actual de las cuentas.</li>
-                    <li><strong>Significado de "Sin Aumento Detectado":</strong> Indica que en el período evaluado la cuenta nunca tuvo una variación intermensual en su ticket promedio igual o superior al 4%.</li>
-                    <li><strong>Significado de "Alta Reciente":</strong> Corresponde a clientes con 3 meses o menos de operaciones; su tarifa se considera vigente por haber sido fijada en el alta.</li>
-                    <li><strong>Interpretación de "CEDOL a Recuperar %":</strong> Un valor de 18% significa que, según las estadísticas oficiales del sector, el costo operativo de transporte subió un 18% desde la última actualización del precio de ese cliente.</li>
+                    <li><strong>Ausencia de filtro de fechas:</strong> Esta pantalla muestra una foto estática del último mes cerrado disponible. Si permitiera seleccionar fechas anteriores, mostraría como desactualizados a clientes que recibieron aumentos posteriores, distorsionando la auditoría actual.</li>
+                    <li><strong>Significado de "Sin Aumento Detectado":</strong> Significa que en todo el historial analizado el cliente nunca tuvo un incremento mensual en su precio por paquete igual o mayor al 4%.</li>
+                    <li><strong>Significado de "Alta Reciente":</strong> Corresponde a cuentas dadas de alta hace 3 meses o menos; su tarifa se considera vigente porque fue acordada al iniciar operaciones.</li>
+                    <li><strong>Interpretación de "CEDOL a Recuperar %":</strong> Un porcentaje del 20% indica que los costos de transporte de la cámara logística subieron un 20% desde la fecha en que se fijó el precio actual del cliente.</li>
                 </ul>
             </section>
 
@@ -764,16 +736,16 @@
             <section id="pag4" class="card doc-section">
                 <h2 class="section-header"><span>⚖️</span> 4. Pesos & Densidad Logística</h2>
                 <p>
-                    <strong>Descripción general:</strong> Analiza las dimensiones físicas de la carga transportada (kilogramos y toneladas) y su relación con la facturación generada, categorizando los despachos en tres segmentos de peso y monitoreando el rendimiento monetario por kilogramo ($/Kg).
+                    <strong>Descripción general:</strong> Analiza las características físicas de los paquetes transportados (kilogramos y toneladas) y su relación con los ingresos monetarios, clasificando los despachos en tres franjas de peso y monitoreando el rendimiento económico por kilogramo transportado.
                 </p>
 
                 <h3 class="sub-header">Usos y Aplicaciones</h3>
                 <ul>
-                    <li><strong>Monitoreo del peso transportado:</strong> Cuantifica el volumen físico en toneladas y el peso promedio por paquete despachado.</li>
-                    <li><strong>Evaluación del rendimiento $/Kg:</strong> Analiza cuántos pesos ingresan a la empresa por cada kilogramo físico trasladado.</li>
-                    <li><strong>Desglose por segmento de peso:</strong> Clasifica la operación en bultos livianos (hasta 3 kg), medianos (3 a 10 kg) y pesados (más de 10 kg).</li>
-                    <li><strong>Auditoría de perfil de carga por cliente:</strong> Permite visualizar qué clientes despachan bultos de alta o baja densidad y su correlación con la facturación y el ticket promedio.</li>
-                    <li><strong>Correlación temporal entre peso y tarifa:</strong> Gráfico combinado que compara mes a mes si variaciones en el peso promedio por paquete estuvieron acompañadas por variaciones en el ticket unitario.</li>
+                    <li><strong>Control de carga física:</strong> Permite conocer cuántas toneladas de carga movilizó la flota y cuál fue el peso medio por paquete.</li>
+                    <li><strong>Rendimiento económico por kilo ($/Kg):</strong> Mide cuántos pesos ingresan a la empresa por cada kilogramo de carga trasladado.</li>
+                    <li><strong>Apertura por segmentos de peso:</strong> Descompone la operación en envíos livianos (hasta 3 kg), medianos (3 a 10 kg) y pesados (más de 10 kg).</li>
+                    <li><strong>Perfil de carga por cliente:</strong> Permite identificar qué clientes despachan bultos livianos y rentables frente a los que operan bultos pesados de gran volumen.</li>
+                    <li><strong>Relación mensual entre peso y tarifa:</strong> Gráfico combinado que compara si los cambios en el peso promedio de los paquetes estuvieron acompañados por cambios en la tarifa cobrada.</li>
                 </ul>
 
                 <h3 class="sub-header">Los 3 Segmentos de Peso</h3>
@@ -784,27 +756,27 @@
                                 <th>Segmento</th>
                                 <th>Rango de Peso</th>
                                 <th>Tipo de Carga Habitual</th>
-                                <th>Impacto Operativo</th>
+                                <th>Impacto en la Operación</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><strong>1. Liviano</strong></td>
                                 <td>Hasta 3 kg</td>
-                                <td>Paquetería estándar de e-commerce (indumentaria, calzado, accesorios, cosmética).</td>
-                                <td>Concentra la mayor cantidad de envíos individuales y presenta el mayor rendimiento $/Kg.</td>
+                                <td>Paquetería de comercio electrónico (ropa, calzado unitario, accesorios, cosmética).</td>
+                                <td>Concentra la gran mayoría de los envíos individuales y genera el mayor ingreso por kilogramo.</td>
                             </tr>
                             <tr>
                                 <td><strong>2. Mediano</strong></td>
                                 <td>Mayor a 3 kg y hasta 10 kg</td>
                                 <td>Cajas medianas, pequeños electrodomésticos, herramientas, bazar.</td>
-                                <td>Volumen intermedio con equilibrio entre espacio cúbico y peso en bodega.</td>
+                                <td>Carga intermedia que combina volumen y peso moderado en las camionetas.</td>
                             </tr>
                             <tr>
                                 <td><strong>3. Pesado</strong></td>
                                 <td>Mayor a 10 kg</td>
-                                <td>Bultos grandes, repuestos pesados, artículos para el hogar, cajas consolidadas.</td>
-                                <td>Concentra cerca de la mitad de los kilos totales transportados ocupando mayor capacidad de carga.</td>
+                                <td>Bultos grandes, repuestos pesados, artículos del hogar, cajas consolidadas.</td>
+                                <td>Representa una porción menor de envíos pero concentra cerca de la mitad del peso total transportado.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -814,33 +786,33 @@
                 <div class="metric-grid">
                     <div class="metric-card">
                         <h4>Kg Totales</h4>
-                        <div class="formula-box">Cálculo: SUM(fact_envios[Kg])</div>
-                        <p>Suma de los kilogramos reales transportados en todos los envíos del período.</p>
+                        <div class="formula-box">Cálculo: Suma del peso real en kilogramos de todos los paquetes transportados.</div>
+                        <p>Total absoluto de peso en kilogramos trasladado por la red logística en el período.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Toneladas Totales</h4>
-                        <div class="formula-box">Cálculo: Kg Totales ÷ 1.000</div>
-                        <p>Volumen de carga físico expresado en toneladas métricas.</p>
+                        <div class="formula-box">Cálculo: Total de kilogramos transportados dividido por 1.000.</div>
+                        <p>Volumen de carga física total expresado en toneladas métricas.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Kg Promedio Envio</h4>
-                        <div class="formula-box">Cálculo: Kg Totales ÷ Total Envíos</div>
-                        <p>Peso promedio en kilogramos de cada paquete despachado en la red.</p>
+                        <div class="formula-box">Cálculo: Total de kilogramos transportados dividido por el Total de Envíos.</div>
+                        <p>Peso medio en kilogramos de cada paquete despachado en la red.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Rendimiento $/Kg</h4>
-                        <div class="formula-box">Cálculo: Facturación Total ÷ Kg Totales</div>
-                        <p>Ingreso promedio obtenido por cada kilogramo de carga transportada.</p>
+                        <div class="formula-box">Cálculo: Facturación Total neta dividida por el Total de Kilogramos transportados.</div>
+                        <p>Ingreso promedio obtenido por cada kilogramo de carga movilizado.</p>
                     </div>
                     <div class="metric-card">
                         <h4>% Envíos Livianos</h4>
-                        <div class="formula-box">Cálculo: Envíos ≤ 3 kg ÷ Total Envíos</div>
-                        <p>Porcentaje de despachos pertenecientes al segmento de hasta 3 kg.</p>
+                        <div class="formula-box">Cálculo: Cantidad de envíos de hasta 3 kg dividida por el Total de Envíos.</div>
+                        <p>Porcentaje de despachos que corresponden a paquetes pequeños de e-commerce.</p>
                     </div>
                     <div class="metric-card">
                         <h4>% Envíos Medianos y Pesados</h4>
-                        <div class="formula-box">Cálculo: Envíos de cada franja ÷ Total Envíos</div>
-                        <p>Porcentaje de despachos de 3 a 10 kg (Medianos) y más de 10 kg (Pesados).</p>
+                        <div class="formula-box">Cálculo: Proporción de envíos pertenecientes a las franjas de 3 a 10 kg y de más de 10 kg.</div>
+                        <p>Porcentaje de despachos con pesos intermedios y de gran tamaño.</p>
                     </div>
                 </div>
 
@@ -848,11 +820,11 @@
                 <ul>
                     <li><strong>Rendimiento $/Kg:</strong>
                         <ul>
-                            <li><strong>Rendimiento elevado:</strong> Es característico de envíos livianos, donde la tarifa mínima por paquete remunera un peso bajo (alto ingreso por kilo transportado).</li>
-                            <li><strong>Rendimiento bajo:</strong> Suele asociarse a clientes o envíos pesados, donde el traslado de grandes volúmenes de kilos diluye el ingreso monetario por unidad de masa.</li>
+                            <li><strong>Rendimiento alto:</strong> Es típico de la paquetería liviana, donde la tarifa base por envío remunera un peso bajo (se cobra un valor elevado por cada kilo trasladado).</li>
+                            <li><strong>Rendimiento bajo:</strong> Suele presentarse en cargas pesadas, donde el traslado de muchos kilos diluye el ingreso monetario por cada kilogramo de carga.</li>
                         </ul>
                     </li>
-                    <li><strong>Gráfico combinado mensual (Kg vs. Ticket):</strong> Permite verificar si la curva de peso promedio se mueve en la misma dirección que la tarifa unitaria. Si el peso medio por envío crece pero el ticket promedio permanece plano, la empresa transporta mayor carga física sin percibir un mayor ingreso por paquete.</li>
+                    <li><strong>Gráfico combinado mensual (Kg vs. Ticket):</strong> Permite verificar si la curva de peso promedio se mueve en la misma dirección que la tarifa unitaria. Si el peso medio por paquete sube mes a mes pero el ticket promedio se mantiene plano, la empresa está moviendo mayor esfuerzo físico de carga sin cobrar más por paquete.</li>
                 </ul>
             </section>
 
@@ -860,15 +832,15 @@
             <section id="pag5" class="card doc-section">
                 <h2 class="section-header"><span>🧱</span> 5. Evolución Cohorte Same Store</h2>
                 <p>
-                    <strong>Descripción general:</strong> Evalúa el origen del crecimiento de la empresa aislando el comportamiento de los clientes continuos o habituales (la cohorte "Same Store") respecto al volumen generado por altas de clientes nuevos y la deserción de cuentas inactivas, mediante un gráfico de cascada (waterfall). Dispone de un filtro automático a meses cerrados (<code>Offset Mes <= -1</code>).
+                    <strong>Descripción general:</strong> Explica de dónde proviene el crecimiento en la cantidad de envíos de la empresa, distinguiendo el comportamiento de los clientes habituales que ya operaban el año anterior (la cohorte "Same Store") frente a los paquetes aportados por clientes nuevos y los paquetes perdidos por clientes que dejaron de operar. Analiza exclusivamente meses cerrados completos.
                 </p>
 
                 <h3 class="sub-header">Usos y Aplicaciones</h3>
                 <ul>
-                    <li><strong>Descomposición del crecimiento:</strong> Explica la variación interanual neta en cantidad de envíos a través de los cuatro bloques de la cascada.</li>
-                    <li><strong>Evaluación de retención de base instalada:</strong> Permite verificar si las cuentas que ya operaban el año pasado expandieron o contrajeron su volumen de despachos.</li>
-                    <li><strong>Comparativa ajustada por días hábiles:</strong> Contrapone el crecimiento nominal frente al crecimiento normalizado por jornadas laborables reales trabajadas en cada período.</li>
-                    <li><strong>Auditoría por cliente dentro de la cohorte:</strong> Tabla detallada que expone para cada cliente continuo sus envíos actuales, envíos del año anterior, variación neta y variación porcentual.</li>
+                    <li><strong>Descomposición del crecimiento (Gráfico de Cascada):</strong> Muestra con claridad los 4 bloques que explican la diferencia total de envíos entre el año anterior y el año actual.</li>
+                    <li><strong>Medición de retención de clientes habituales:</strong> Permite saber si la base consolidada de clientes tradicionales aumentó o disminuyó su nivel de actividad.</li>
+                    <li><strong>Crecimiento real ajustado por días hábiles:</strong> Compara el crecimiento simple con el crecimiento ajustado por la cantidad de días laborales reales trabajados en cada año.</li>
+                    <li><strong>Detalle cliente por cliente:</strong> Tabla que expone para cada cuenta habitual cuántos paquetes despachó en cada año y cuál fue su variación neta y porcentual.</li>
                 </ul>
 
                 <h3 class="sub-header">La Cascada de Variación Neta (Waterfall)</h3>
@@ -876,31 +848,31 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Componente</th>
-                                <th>Lógica de Agrupación</th>
-                                <th>Significado en el Gráfico</th>
+                                <th>Bloque de la Cascada</th>
+                                <th>Cómo se Compone</th>
+                                <th>Qué Significa</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><strong>1. Envíos Año Anterior</strong></td>
-                                <td>Total Envíos Año Anterior</td>
-                                <td>Volumen base de paquetes procesados en el período comparable del año anterior.</td>
+                                <td>Total de envíos despachados en el año anterior</td>
+                                <td>Punto de partida: volumen total de paquetes operados en el período comparable del año pasado.</td>
                             </tr>
                             <tr>
                                 <td><strong>2. Efecto Cohorte</strong></td>
-                                <td>Envíos SameStore Actual - Envíos SameStore Año Anterior</td>
-                                <td>Variación neta generada exclusivamente por las cuentas continuas que operaron en ambos años.</td>
+                                <td>Envíos actuales menos anteriores de clientes habituales</td>
+                                <td>Crecimiento o caída neta generada exclusivamente por los clientes continuos que operaron en ambos años.</td>
                             </tr>
                             <tr>
                                 <td><strong>3. Clientes Nuevos</strong></td>
-                                <td>Envíos de cuentas con alta en el año actual</td>
-                                <td>Volumen aportado por cuentas que no registraban operaciones en el año anterior.</td>
+                                <td>Envíos de cuentas incorporadas en el año actual</td>
+                                <td>Volumen aportado por cuentas nuevas que no registraban despachos en el año anterior.</td>
                             </tr>
                             <tr>
                                 <td><strong>4. Clientes Perdidos</strong></td>
                                 <td>Envíos del año anterior de cuentas sin actividad actual</td>
-                                <td>Volumen que despachaban cuentas que en el año actual no registraron envíos (se resta en la cascada).</td>
+                                <td>Volumen que aportaban clientes que en el año actual no tuvieron actividad (resta en la cascada).</td>
                             </tr>
                         </tbody>
                     </table>
@@ -910,23 +882,23 @@
                 <div class="metric-grid">
                     <div class="metric-card">
                         <h4>Variación Envíos Cohorte</h4>
-                        <div class="formula-box">Cálculo: Envíos SameStore Actual - Envíos SameStore Año Anterior</div>
-                        <p>Diferencia absoluta de envíos generada por los clientes que operaron en ambos años comparados.</p>
+                        <div class="formula-box">Cálculo: Envíos actuales menos envíos anteriores para los clientes habituales de la cohorte.</div>
+                        <p>Diferencia neta en cantidad de paquetes generada por la cartera de clientes tradicionales.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Envíos YoY % SameStore (Nominal)</h4>
-                        <div class="formula-box">Cálculo: (SameStore Actual - SameStore Anterior) ÷ SameStore Anterior</div>
-                        <p>Variación porcentual interanual directa de paquetes de la cohorte recurrente.</p>
+                        <div class="formula-box">Cálculo: Variación porcentual directa en envíos de los clientes habituales frente al año pasado.</div>
+                        <p>Crecimiento porcentual simple del volumen de la cartera tradicional sin ajustes de calendario.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Envíos YoY % SameStore Ajustado</h4>
-                        <div class="formula-box">Cálculo: Variación interanual del promedio diario de envíos por día hábil</div>
+                        <div class="formula-box">Cálculo: Variación porcentual del promedio de envíos diarios por día hábil laborable de cada año.</div>
                         <p>Normaliza el volumen dividiendo por los días laborables reales trabajados en cada año (descontando feriados y fines de semana). Refleja el ritmo operativo diario real.</p>
                     </div>
                     <div class="metric-card">
                         <h4># Clientes Cohorte SameStore</h4>
-                        <div class="formula-box">Cálculo: Conteo de clientes presentes en ambos años comparados</div>
-                        <p>Cantidad de cuentas continuas que integran la base recurrente evaluada.</p>
+                        <div class="formula-box">Cálculo: Cantidad de clientes que tuvieron actividad de despacho en ambos años comparados.</div>
+                        <p>Total de cuentas que integran la base de clientes habituales analizada.</p>
                     </div>
                 </div>
 
@@ -934,11 +906,11 @@
                 <ul>
                     <li><strong>Lectura de la Cascada:</strong>
                         <ul>
-                            <li>Si el <code>Efecto Cohorte</code> es positivo, la base consolidada de clientes tradicionales está en crecimiento.</li>
-                            <li>Si el <code>Efecto Cohorte</code> es negativo pero el volumen total final crece, el incremento global de la compañía está sustentado en la incorporación de clientes nuevos, compensando la merma en la cartera tradicional.</li>
+                            <li>Si el bloque <strong>Efecto Cohorte</strong> es positivo, la base consolidada de clientes tradicionales está en crecimiento.</li>
+                            <li>Si el bloque <strong>Efecto Cohorte</strong> es negativo pero el volumen total final crece, el crecimiento global de la compañía está descansando enteramente en la incorporación de clientes nuevos, compensando la pérdida de volumen en las cuentas habituales.</li>
                         </ul>
                     </li>
-                    <li><strong>YoY Nominal vs. YoY Ajustado por Días Hábiles:</strong> Si en un año hubo menos días hábiles que en el anterior (por feriados o estructura de calendario), el indicador nominal puede mostrar una variación inferior a la real. El indicador ajustado aísla ese efecto calendario para medir la productividad operativa media diaria.</li>
+                    <li><strong>Nominal vs. Ajustado por Días Hábiles:</strong> Si en un año hubo menos días hábiles que en el anterior por feriados, el indicador nominal puede mostrar menor crecimiento del real. El indicador ajustado aísla ese efecto calendario para medir el ritmo de despacho diario real.</li>
                 </ul>
             </section>
 
@@ -946,118 +918,118 @@
             <section id="pag6" class="card doc-section">
                 <h2 class="section-header"><span>👥</span> 6. Seguimiento de Clientes</h2>
                 <p>
-                    <strong>Descripción general:</strong> Centro de monitoreo y auditoría de la cartera de clientes. Dispone de dos perspectivas seleccionables mediante botones de navegación (Bookmarks): una vista <strong>Mensual</strong> para análisis intermensual (MoM), alertas de riesgo y desglose temporal, y una vista <strong>Acumulada (YTD)</strong> para ranking anual, share de participación y comparativas año contra año.
+                    <strong>Descripción general:</strong> Centro integral de monitoreo operativo y de evolución de la cartera de clientes. Cuenta con dos perspectivas seleccionables mediante botones en pantalla: la vista <strong>Mensual</strong> (para seguimiento mes a mes, alertas de variación y desglose temporal) y la vista <strong>Acumulada (YTD)</strong> (para ranking anual, participación de mercado y comparativas interanuales consolidadas).
                 </p>
 
                 <h3 class="sub-header">Usos y Aplicaciones</h3>
                 <ul>
-                    <li><strong>Navegación Mensual vs. Acumulado:</strong> Los botones superiores alternan entre la dinámica puntual del mes seleccionado y el desempeño acumulado en lo que va del año.</li>
-                    <li><strong>Diferenciación entre Envíos y Paquetes (Bultos):</strong> Permite contrastar la cantidad de guías despachadas con la cantidad física de bultos trasladados.</li>
-                    <li><strong>Monitoreo por Alertas Mensuales:</strong> Segmentador interactivo que aísla de inmediato cuentas según su variación intermensual:
+                    <li><strong>Navegación Mensual vs. Acumulado:</strong> Los botones superiores permiten alternar entre la coyuntura del mes seleccionado y el desempeño acumulado en lo que va del año.</li>
+                    <li><strong>Diferenciación entre Envíos y Bultos:</strong> Permite contrastar la cantidad de despachos o guías frente a la cantidad física de bultos transportados.</li>
+                    <li><strong>Alertas de comportamiento mensual:</strong> Filtro interactivo que clasifica de inmediato a los clientes según su variación frente al mes anterior:
                         <ul>
-                            <li><span class="badge badge-red">🔴 En Riesgo MoM</span>: Caída superior al 15% respecto al mes anterior (Var MoM ≤ -15%).</li>
-                            <li><span class="badge badge-yellow">🟡 Estable</span>: Fluctuación mensual controlada entre -15% y +5%.</li>
-                            <li><span class="badge badge-green">🟢 Impulsores MoM</span>: Crecimiento superior al 5% (Var MoM > +5%) o cuentas nuevas/reactivadas.</li>
+                            <li><span class="badge badge-red">🔴 En Riesgo MoM</span>: Clientes con caídas de volumen superiores al 15% frente al mes anterior.</li>
+                            <li><span class="badge badge-yellow">🟡 Estable</span>: Clientes con variaciones controladas entre -15% y +5%.</li>
+                            <li><span class="badge badge-green">🟢 Impulsores MoM</span>: Clientes con crecimiento de volumen mayor al 5% o cuentas nuevas/reactivadas.</li>
                         </ul>
                     </li>
-                    <li><strong>Segmentación de Cartera Anual (YTD):</strong> Segmentador interactivo que agrupa las cuentas según su desempeño en el acumulado del año:
+                    <li><strong>Segmentación de cartera en el año (YTD):</strong> Filtro que agrupa las cuentas según su dinámica anual acumulada:
                         <ul>
-                            <li><span class="badge badge-blue">⭐ Top 10 Clientes Core</span>: Las 10 cuentas con mayor volumen acumulado en el año.</li>
-                            <li><span class="badge badge-green">🟢 En Expansión Anual</span>: Cuentas con volumen acumulado superior al del año anterior.</li>
-                            <li><span class="badge badge-red">🔴 En Retroceso Anual</span>: Cuentas con volumen acumulado inferior al del año anterior.</li>
-                            <li><span class="badge badge-blue">🆕 Clientes Nuevos 2026</span>: Cuentas con actividad en 2026 sin operaciones en 2025.</li>
+                            <li><span class="badge badge-blue">⭐ Top 10 Clientes Core</span>: Los 10 clientes con mayor volumen acumulado en el año.</li>
+                            <li><span class="badge badge-green">🟢 En Expansión Anual</span>: Cuentas cuyo volumen acumulado actual supera al del año anterior.</li>
+                            <li><span class="badge badge-red">🔴 En Retroceso Anual</span>: Cuentas cuyo volumen acumulado actual es inferior al del año pasado.</li>
+                            <li><span class="badge badge-blue">🆕 Clientes Nuevos 2026</span>: Cuentas con actividad en 2026 que no operaban en 2025.</li>
                         </ul>
                     </li>
-                    <li><strong>Ranking y Share de Mercado:</strong> Tabla matriz acumulada que exhibe el porcentaje de participación de cada cliente sobre el total de envíos y su posición ordinal.</li>
-                    <li><strong>Desglose temporal jerárquico:</strong> Tabla matriz temporal con apertura por Año, Año-Mes y Fecha diaria con comparativas MoM y YoY.</li>
-                    <li><strong>Distribución territorial:</strong> Gráfico de torta que expone la proporción de envíos operados en AMBA frente al Interior.</li>
+                    <li><strong>Ranking y Share de mercado:</strong> Matriz que muestra la cuota de envíos de cada cliente sobre el total de la empresa y su puesto en el ranking.</li>
+                    <li><strong>Apertura temporal jerárquica:</strong> Tabla con desglose por Año, Mes y Fecha diaria con comparativas frente al mes y año anterior.</li>
+                    <li><strong>Distribución regional:</strong> Gráfico que expone la proporción de entregas en AMBA frente al Interior.</li>
                 </ul>
 
                 <h3 class="sub-header">Métricas Principales y Cómo se Calculan</h3>
                 
-                <h4 class="group-header">Vista Mensual (MoM & Período)</h4>
+                <h4 class="group-header">Vista Mensual (Seguimiento Mes a Mes)</h4>
                 <div class="metric-grid">
                     <div class="metric-card">
                         <h4>Total Envíos</h4>
-                        <div class="formula-box">Cálculo: DISTINCTCOUNT(fact_envios[Código])</div>
-                        <p>Cantidad de guías o despachos únicos procesados en el mes seleccionado.</p>
+                        <div class="formula-box">Cálculo: Cantidad de guías o despachos únicos procesados en el mes seleccionado.</div>
+                        <p>Total de operaciones individuales de entrega realizadas en el mes.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Total Paquetes (Bultos)</h4>
-                        <div class="formula-box">Cálculo: SUM(fact_envios[Bultos])</div>
-                        <p>Cantidad total de bultos físicos despachados dentro de los envíos del período.</p>
+                        <div class="formula-box">Cálculo: Cantidad total de bultos físicos contenidos dentro de los envíos del mes.</div>
+                        <p>Cantidad de cajas o paquetes físicos individuales transportados.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Total Envíos Mes Anterior</h4>
-                        <div class="formula-box">Cálculo: CALCULATE([Total envios], DATEADD(Fecha, -1, MONTH))</div>
-                        <p>Volumen de envíos operados en el mes inmediatamente anterior.</p>
+                        <div class="formula-box">Cálculo: Cantidad de envíos procesados en el mes inmediatamente anterior.</div>
+                        <p>Volumen de envíos operados en el mes previo para comparar la evolución de corto plazo.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Variación Envíos MoM %</h4>
-                        <div class="formula-box">Cálculo: (Envíos Actual - Envíos Mes Anterior) ÷ Envíos Mes Anterior</div>
-                        <p>Tasa de variación porcentual intermensual en cantidad de envíos procesados.</p>
+                        <div class="formula-box">Cálculo: Variación porcentual entre los envíos del mes actual y los del mes anterior.</div>
+                        <p>Tasa de crecimiento o caída intermensual en cantidad de despachos.</p>
                     </div>
                     <div class="metric-card">
                         <h4>% Mes Anterior Paquetes</h4>
-                        <div class="formula-box">Cálculo: (Paquetes Actual - Paquetes Mes Anterior) ÷ Paquetes Mes Anterior</div>
-                        <p>Tasa de variación porcentual intermensual en la cantidad de bultos físicos.</p>
+                        <div class="formula-box">Cálculo: Variación porcentual entre los bultos físicos del mes actual y los del mes anterior.</div>
+                        <p>Tasa de variación intermensual en la cantidad de bultos físicos trasladados.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Total Envíos Año Anterior (SMPLY)</h4>
-                        <div class="formula-box">Cálculo: CALCULATE([Total envios], DATEADD(Fecha, -1, YEAR))</div>
-                        <p>Volumen de envíos procesados en el mismo mes del año anterior (Same Month Previous Year).</p>
+                        <div class="formula-box">Cálculo: Cantidad de envíos procesados en el mismo mes calendario del año pasado.</div>
+                        <p>Mismo mes del año anterior (Same Month Previous Year) para comparar estacionalidades equivalentes.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Total Envíos YoY % (% SMPLY)</h4>
-                        <div class="formula-box">Cálculo: (Envíos Actual - SMPLY) ÷ SMPLY</div>
-                        <p>Variación porcentual interanual correspondiente al mes analizado frente al mismo mes del año anterior.</p>
+                        <div class="formula-box">Cálculo: Variación porcentual del mes analizado frente al mismo mes del año anterior.</div>
+                        <p>Crecimiento interanual puntual del mes frente a su período gemelo del año previo.</p>
                     </div>
                     <div class="metric-card">
                         <h4>% AMBA vs. % Interior</h4>
-                        <div class="formula-box">Cálculo: Envíos por Región ÷ Total Envíos</div>
-                        <p>Proporción de envíos entregados en el Área Metropolitana de Buenos Aires frente al Interior.</p>
+                        <div class="formula-box">Cálculo: Cantidad de envíos entregados en cada región dividida por el total de envíos.</div>
+                        <p>Proporción de entregas realizadas en el área metropolitana frente al resto del país.</p>
                     </div>
                 </div>
 
-                <h4 class="group-header">Vista Acumulada (YTD)</h4>
+                <h4 class="group-header">Vista Acumulada (YTD - Año a la Fecha)</h4>
                 <div class="metric-grid">
                     <div class="metric-card">
                         <h4>Total Envíos YTD</h4>
-                        <div class="formula-box">Cálculo: TOTALYTD([Total envios], dim_calendario[Fecha])</div>
-                        <p>Cantidad acumulada de envíos desde el primer día del año hasta la fecha seleccionada.</p>
+                        <div class="formula-box">Cálculo: Suma acumulada de envíos desde el 1 de enero hasta la fecha seleccionada.</div>
+                        <p>Volumen acumulado de despachos en lo que va del año corriente.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Total Envíos YTD Año Anterior</h4>
-                        <div class="formula-box">Cálculo: Envíos acumulados en el mismo período del año pasado</div>
-                        <p>Volumen comparable acumulado hasta el mismo período en el año anterior.</p>
+                        <div class="formula-box">Cálculo: Suma acumulada de envíos en el mismo lapso del año anterior.</div>
+                        <p>Volumen comparable acumulado hasta la misma fecha del año pasado.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Total Envíos YTD YoY %</h4>
-                        <div class="formula-box">Cálculo: (YTD Actual - YTD Año Anterior) ÷ YTD Año Anterior</div>
-                        <p>Tasa de crecimiento porcentual acumulada interanual.</p>
+                        <div class="formula-box">Cálculo: Crecimiento porcentual entre los envíos acumulados del año actual y los del año anterior.</div>
+                        <p>Tasa de crecimiento interanual del volumen físico consolidado del año.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Var Envíos YTD Cantidad</h4>
-                        <div class="formula-box">Cálculo: Total Envíos YTD - Total Envíos YTD Año Anterior</div>
-                        <p>Diferencia absoluta en cantidad de envíos acumulados respecto al año anterior.</p>
+                        <div class="formula-box">Cálculo: Envíos acumulados del año actual menos envíos acumulados del año anterior.</div>
+                        <p>Diferencia directa en cantidad física de envíos frente al año pasado.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Share Envíos YTD %</h4>
-                        <div class="formula-box">Cálculo: Total Envíos YTD Cliente ÷ Total Envíos YTD Empresa</div>
-                        <p>Participación porcentual del cliente sobre el volumen acumulado total de la compañía.</p>
+                        <div class="formula-box">Cálculo: Envíos acumulados del cliente divididos por el total de envíos acumulados de la empresa.</div>
+                        <p>Porcentaje de participación de cada cuenta sobre el total de envíos de la compañía en el año.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Ranking Envíos YTD</h4>
-                        <div class="formula-box">Cálculo: RANKX(ALLSELECTED(Clientes), [Total envios YTD], , DESC)</div>
-                        <p>Posición ordinal del cliente en función de su volumen de envíos acumulado en el año.</p>
+                        <div class="formula-box">Cálculo: Posición ordinal del cliente según su volumen acumulado de envíos (del mayor al menor).</div>
+                        <p>Puesto que ocupa la cuenta en la cartera según la cantidad de despachos acumulados en el año.</p>
                     </div>
                 </div>
 
                 <h3 class="sub-header">Cómo Interpretar los Datos</h3>
                 <ul>
-                    <li><strong>Envíos vs. Paquetes/Bultos:</strong> Un cliente puede tener una cantidad similar de envíos pero un volumen mayor de paquetes si realiza despachos consolidados multibulto. Evaluar ambas métricas evita distorsiones sobre el esfuerzo físico real de carga.</li>
-                    <li><strong>Alertas de comportamiento mensual:</strong> El segmentador de alertas permite aislar de forma directa aquellas cuentas con caídas superiores al 15% (Riesgo) respecto a su mes previo, distinguiéndolas de aquellas con estabilidad o aceleración.</li>
-                    <li><strong>Segmentación de cartera YTD:</strong> Facilita el análisis focalizado según la dinámica de mediano plazo de las cuentas, permitiendo filtrar exclusivamente las cuentas en retroceso anual o las cuentas del Top 10 Core.</li>
+                    <li><strong>Envíos vs. Bultos:</strong> Un cliente puede mantener constante su cantidad de envíos (guías) pero aumentar su cantidad de bultos si consolida varios paquetes por guía. Seguir ambas métricas evita distorsiones sobre el esfuerzo físico real de distribución.</li>
+                    <li><strong>Uso de Alertas mensuales:</strong> Permite aislar de inmediato las cuentas que presentan caídas pronunciadas (Riesgo, caída mayor al 15%) de aquellas con estabilidad o aceleración mensual.</li>
+                    <li><strong>Uso de Segmentos de cartera:</strong> Facilita el análisis focalizado según la dinámica de mediano plazo de las cuentas, permitiendo filtrar exclusivamente las cuentas en retroceso anual o las cuentas del Top 10 Core.</li>
                     <li><strong>Marcadores Mensual y Acumulado:</strong> La vista Mensual analiza variaciones coyunturales y estacionalidades de corto plazo; la vista Acumulada refleja la concentración estructural y la trayectoria anual consolidada.</li>
                 </ul>
             </section>
@@ -1066,85 +1038,85 @@
             <section id="pag7" class="card doc-section">
                 <h2 class="section-header"><span>💼</span> 7. Oportunidades Comerciales</h2>
                 <p>
-                    <strong>Descripción general:</strong> Pantalla de seguimiento del pipeline y ciclo de ventas de la empresa. Presenta el inventario de prospectos y propuestas comerciales activas, desglosando el valor monetario proyectado en términos brutos (nominales) y ponderados por probabilidad de éxito, y analizando las etapas del embudo, la conversión mensual y las proyecciones de inicio de servicio.
+                    <strong>Descripción general:</strong> Tablero de control del pipeline y ciclo de ventas de la empresa. Presenta el inventario de prospectos y propuestas activas, desglosando el valor monetario proyectado en términos nominales (al 100%) y ponderados por probabilidad de éxito, y analizando las fases del embudo, las conversiones del mes y las proyecciones de inicio de servicio.
                 </p>
 
                 <h3 class="sub-header">Usos y Aplicaciones</h3>
                 <ul>
-                    <li><strong>Control del pipeline activo:</strong> Cuantifica la cantidad de negociaciones abiertas y su valor monetario proyectado por mes.</li>
-                    <li><strong>Monitoreo de etapas del embudo (Funnel):</strong> Permite observar en qué fase del ciclo de ventas (Prospecto, Negocio Potencial, Cotizado, Ganado, Perdido, Suspendido) se encuentra concentrado el volumen económico.</li>
+                    <li><strong>Control del pipeline activo:</strong> Cuantifica la cantidad de propuestas comerciales abiertas y su facturación mensual proyectada.</li>
+                    <li><strong>Monitoreo de etapas del embudo (Funnel):</strong> Permite observar en qué fase del ciclo de ventas (Prospecto, Negocio Potencial, Cotizado, Ganado, Perdido, Suspendido) se encuentra concentrado el valor económico del pipeline.</li>
                     <li><strong>Distribución por ejecutivo comercial:</strong> Visualiza el valor ponderado del pipeline gestionado por cada Responsable.</li>
-                    <li><strong>Proyección por fecha de inicio de servicio:</strong> Gráfico de columnas que proyecta en qué meses está previsto el comienzo operativo de los servicios, con apertura por Línea de Servicio (Paquetería, Fulfillment, Flota).</li>
+                    <li><strong>Proyección por mes de inicio de servicio:</strong> Gráfico de columnas que proyecta en qué meses está previsto el comienzo operativo de los servicios, con apertura por Línea de Servicio (Paquetería, Fulfillment, Flota).</li>
                     <li><strong>Seguimiento de actividad comercial:</strong> Tabla detallada que lista cada oportunidad con su probabilidad, valores nominales y ponderados, fecha de última actividad y próximo compromiso pactado.</li>
-                    <li><strong>Filtrado interactivo:</strong> Cuenta con segmentadores por Responsable, Tipo de Oportunidad y Línea de Servicio.</li>
+                    <li><strong>Filtros interactivos:</strong> Cuenta con segmentadores por Responsable, Tipo de Oportunidad y Línea de Servicio.</li>
                 </ul>
 
                 <h3 class="sub-header">Métricas Principales y Cómo se Calculan</h3>
                 <div class="metric-grid">
                     <div class="metric-card">
                         <h4>Oportunidades Nuevas</h4>
-                        <div class="formula-box">Cálculo: COUNTROWS de fact_oportunidades con Fecha Alta en mes y año actuales</div>
-                        <p>Cantidad de oportunidades comerciales ingresadas formalmente al sistema en el transcurso del mes corriente.</p>
+                        <div class="formula-box">Cálculo: Cantidad de propuestas y prospectos comerciales dados de alta en el sistema durante el mes en curso.</div>
+                        <p>Nuevas oportunidades comerciales incorporadas formalmente al embudo en el mes actual.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Oportunidades En Gestión</h4>
-                        <div class="formula-box">Cálculo: COUNTROWS de fact_oportunidades activas (excluye "Ganado" y "Perdido")</div>
-                        <p>Cantidad total de propuestas comerciales que se encuentran en trámite activo en el pipeline.</p>
+                        <div class="formula-box">Cálculo: Cantidad total de propuestas comerciales activas en negociación en el embudo.</div>
+                        <p>Total de propuestas abiertas en trámite activo (excluye las marcadas como Ganadas o Perdidas).</p>
                     </div>
                     <div class="metric-card">
                         <h4>$ En Gestión</h4>
-                        <div class="formula-box">Cálculo: SUM(fact_oportunidades[$ Mes Ponderado]) para cuentas activas</div>
-                        <p>Monto mensual estimado ponderado de las oportunidades actualmente abiertas en el pipeline.</p>
+                        <div class="formula-box">Cálculo: Suma de la facturación mensual proyectada de las propuestas abiertas, ajustada por la probabilidad de cierre de cada una.</div>
+                        <p>Monto mensual estimado ponderado de las oportunidades que actualmente están en negociación activa en el embudo.</p>
                     </div>
                     <div class="metric-card">
                         <h4>$ En Gestión Nominal</h4>
-                        <div class="formula-box">Cálculo: SUM(fact_oportunidades[$ Mes]) para cuentas activas</div>
-                        <p>Monto mensual bruto total de las oportunidades abiertas sin aplicar el porcentaje de probabilidad de éxito.</p>
+                        <div class="formula-box">Cálculo: Suma del valor mensual total de las propuestas abiertas al 100%, sin considerar la probabilidad de cierre.</div>
+                        <p>Monto mensual bruto total del pipeline abierto en caso de que todas las negociaciones se cerraran al 100%.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Oportunidades Ganadas</h4>
-                        <div class="formula-box">Cálculo: COUNTROWS en estado "Ganado" con Mes Cierre en mes actual y $ Mes > 0</div>
-                        <p>Negociaciones comerciales cerradas exitosamente durante el mes corriente.</p>
+                        <div class="formula-box">Cálculo: Cantidad de negociaciones comerciales cerradas con éxito durante el mes en curso.</div>
+                        <p>Propuestas comerciales que culminaron en acuerdos cerrados exitosamente en el mes actual.</p>
                     </div>
                     <div class="metric-card">
                         <h4>$ Ganado</h4>
-                        <div class="formula-box">Cálculo: SUM(fact_oportunidades[$ Mes Ponderado]) ganadas en mes actual</div>
-                        <p>Monto mensual de facturación correspondiente a las oportunidades ganadas en el mes en curso.</p>
+                        <div class="formula-box">Cálculo: Monto mensual de facturación correspondiente a las oportunidades ganadas durante el mes actual.</div>
+                        <p>Ingreso mensual incorporado por las negociaciones cerradas de forma exitosa en el mes en curso.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Oportunidades Perdidas</h4>
-                        <div class="formula-box">Cálculo: COUNTROWS en estado "Perdido" con Mes Cierre en mes actual</div>
-                        <p>Negociaciones comerciales descartadas o canceladas durante el mes corriente.</p>
+                        <div class="formula-box">Cálculo: Cantidad de propuestas comerciales descartadas o canceladas durante el mes en curso.</div>
+                        <p>Negociaciones que no prosperaron o fueron dadas de baja en el transcurso del mes actual.</p>
                     </div>
                     <div class="metric-card">
                         <h4>$ Perdido</h4>
-                        <div class="formula-box">Cálculo: SUM(fact_oportunidades[$ Mes Ponderado]) perdidas en mes actual</div>
-                        <p>Monto mensual de facturación correspondiente a las oportunidades descartadas en el mes en curso.</p>
+                        <div class="formula-box">Cálculo: Monto mensual de facturación correspondiente a las oportunidades canceladas durante el mes actual.</div>
+                        <p>Valor mensual de facturación que se descartó en las propuestas dadas de baja en el mes en curso.</p>
                     </div>
                     <div class="metric-card">
                         <h4>$ Pipeline Total Nominal</h4>
-                        <div class="formula-box">Cálculo: SUM(fact_oportunidades[$ Mes])</div>
-                        <p>Suma total del valor mensual nominal de todas las oportunidades registradas en la base.</p>
+                        <div class="formula-box">Cálculo: Suma del valor mensual estimado de todas las oportunidades registradas en la base al 100%.</div>
+                        <p>Valor mensual global agregado de todas las oportunidades registradas en el sistema sin ponderar.</p>
                     </div>
                     <div class="metric-card">
                         <h4>$ Pipeline Total Ponderado</h4>
-                        <div class="formula-box">Cálculo: SUM(fact_oportunidades[$ Mes Ponderado]) = SUM($ Mes × Probabilidad)</div>
-                        <p>Valor mensual agregado ajustado por la probabilidad de cierre de cada oportunidad comercial.</p>
+                        <div class="formula-box">Cálculo: Suma del valor mensual de cada oportunidad multiplicado por su probabilidad de concreción estimada.</div>
+                        <p>Valor mensual global del pipeline ajustado por el nivel de probabilidad de avance de cada propuesta.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Tasa Conversión Oportunidades</h4>
-                        <div class="formula-box">Cálculo: Oportunidades Ganadas ÷ (Oportunidades Ganadas + Perdidas)</div>
-                        <p>Proporción de efectividad comercial entre las oportunidades concluidas durante el período.</p>
+                        <div class="formula-box">Cálculo: Oportunidades Ganadas divididas por el total de oportunidades concluidas (Ganadas más Perdidas).</div>
+                        <p>Porcentaje de efectividad comercial sobre el total de oportunidades resueltas en el período.</p>
                     </div>
                     <div class="metric-card">
                         <h4>Ticket Promedio En Gestión</h4>
-                        <div class="formula-box">Cálculo: $ En Gestión ÷ Oportunidades En Gestión</div>
-                        <p>Valor mensual promedio ponderado por cada propuesta comercial abierta en el pipeline.</p>
+                        <div class="formula-box">Cálculo: Monto mensual ponderado en gestión dividido por la cantidad de oportunidades abiertas.</div>
+                        <p>Valor mensual promedio ponderado que representa cada propuesta comercial abierta en el pipeline.</p>
                     </div>
                     <div class="metric-card">
                         <h4>% Probabilidad Promedio Ponderada</h4>
-                        <div class="formula-box">Cálculo: $ En Gestión ÷ $ En Gestión Nominal</div>
-                        <p>Nivel de probabilidad global o madurez ponderada de la cartera en gestión activa.</p>
+                        <div class="formula-box">Cálculo: Monto mensual ponderado dividido por el monto mensual nominal de las oportunidades en gestión.</div>
+                        <p>Nivel de madurez global o porcentaje de probabilidad promedio de toda la cartera activa en negociación.</p>
                     </div>
                 </div>
 
@@ -1158,7 +1130,7 @@
                     </li>
                     <li><strong>Embudo de Ventas (Funnel):</strong> Refleja en qué fases del proceso de ventas (Prospecto, Negocio Potencial, Cotizado, etc.) está concentrado el valor económico del pipeline, permitiendo evaluar la maduración de las negociaciones en curso.</li>
                     <li><strong>Proyección por Mes de Inicio de Servicio:</strong> Indica en qué meses futuros está previsto que comience la prestación operativa y la facturación de las cuentas en gestión, desglosado por línea de servicio (Paquetería, Fulfillment, Flota).</li>
-                    <li><strong>Ventana temporal de Ganadas, Perdidas y Nuevas:</strong> Las tarjetas KPI de Oportunidades Ganadas, Perdidas y Nuevas se calculan sobre el mes calendario en curso, reflejando la dinámica mensual del período.</li>
+                    <li><strong>Ventana temporal de Ganadas, Perdidas y Nuevas:</strong> Las tarjetas de Oportunidades Ganadas, Perdidas y Nuevas se calculan sobre el mes calendario en curso, reflejando la dinámica mensual del período.</li>
                 </ul>
             </section>
 
@@ -1222,7 +1194,7 @@
                         <svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Respuesta:</strong> <code>Total Envíos</code> cuenta las guías o comprobantes de despacho únicos (operaciones individuales de entrega). <code>Total Paquetes (Bultos)</code> suma la totalidad de bultos físicos contenidos en esas guías. Cuando un cliente realiza envíos consolidados que contienen varias cajas por guía, la cantidad de paquetes supera a la cantidad de envíos.</p>
+                        <p><strong>Respuesta:</strong> <strong>Total Envíos</strong> cuenta las guías o comprobantes de despacho únicos (operaciones individuales de entrega). <strong>Total Paquetes (Bultos)</strong> suma la totalidad de bultos físicos contenidos en esas guías. Cuando un cliente realiza envíos consolidados que contienen varias cajas por guía, la cantidad de paquetes supera a la cantidad de envíos.</p>
                     </div>
                 </div>
 
@@ -1232,7 +1204,7 @@
                         <svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Respuesta:</strong> Son marcadores (Bookmarks) que alternan las tarjetas y tablas de la pantalla: el botón <strong>Mensual</strong> muestra el volumen puntual del mes seleccionado con comparativas intermensuales (MoM) y alertas; el botón <strong>Acumulado</strong> muestra las métricas YTD (Year-To-Date) desde el inicio del año, incluyendo ranking, cuota de mercado (% Share) y comparativas interanuales acumuladas.</p>
+                        <p><strong>Respuesta:</strong> Son botones que alternan las tarjetas y tablas de la pantalla: el botón <strong>Mensual</strong> muestra el volumen puntual del mes seleccionado con comparativas intermensuales (MoM) y alertas; el botón <strong>Acumulado</strong> muestra las cifras acumuladas desde el 1 de enero hasta la fecha seleccionada, incluyendo ranking, cuota de mercado (% Share) y comparativas interanuales acumuladas.</p>
                     </div>
                 </div>
 
@@ -1244,9 +1216,9 @@
                     <div class="faq-answer">
                         <p><strong>Respuesta:</strong> La clasificación evalúa la variación porcentual de envíos de la cuenta frente al mes anterior:
                         <ul>
-                            <li><strong>🔴 En Riesgo MoM:</strong> Caída en envíos superior al 15% (Var MoM ≤ -15%).</li>
-                            <li><strong>🟡 Estable:</strong> Variación contenida entre -15% y +5%.</li>
-                            <li><strong>🟢 Impulsores MoM:</strong> Crecimiento en envíos mayor al 5% (Var MoM > +5%) o cuentas que no tenían operaciones el mes previo y registraron despachos en el actual.</li>
+                            <li><strong>🔴 En Riesgo MoM:</strong> Caída en envíos superior al 15% frente al mes anterior.</li>
+                            <li><strong>🟡 Estable:</strong> Variación contenida dentro del rango entre -15% y +5%.</li>
+                            <li><strong>🟢 Impulsores MoM:</strong> Crecimiento en envíos mayor al 5% o cuentas que no tenían operaciones el mes previo y registraron despachos en el actual.</li>
                         </ul>
                         </p>
                     </div>
@@ -1258,9 +1230,9 @@
                         <svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Respuesta:</strong> Clasifica a los clientes en función de su comportamiento acumulado anual:
+                        <p><strong>Respuesta:</strong> Clasifica a los clientes en función de su comportamiento acumulado en lo que va del año:
                         <ul>
-                            <li><strong>⭐ Top 10 Clientes Core:</strong> Las 10 cuentas con mayor volumen acumulado en el año (Ranking YTD ≤ 10).</li>
+                            <li><strong>⭐ Top 10 Clientes Core:</strong> Las 10 cuentas con mayor volumen acumulado de envíos en el año.</li>
                             <li><strong>🟢 En Expansión Anual:</strong> Cuentas cuyo volumen acumulado actual supera al del mismo período del año anterior.</li>
                             <li><strong>🔴 En Retroceso Anual:</strong> Cuentas cuyo volumen acumulado actual es inferior al del año previo.</li>
                             <li><strong>🆕 Clientes Nuevos 2026:</strong> Cuentas con envíos en 2026 sin actividad registrada en 2025.</li>
@@ -1275,7 +1247,7 @@
                         <svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Respuesta:</strong> El <strong>valor nominal</strong> suma el 100% de la facturación mensual proyectada en todas las propuestas en negociación sin considerar la probabilidad de cierre. El <strong>valor ponderado</strong> multiplica el monto mensual de cada oportunidad por su probabilidad de éxito asignada (<code>$ Mes × Probabilidad</code>), reflejando el valor monetario esperado del pipeline.</p>
+                        <p><strong>Respuesta:</strong> El <strong>valor nominal</strong> suma el 100% de la facturación mensual estimada en todas las propuestas en trámite, sin considerar la probabilidad de cierre. El <strong>valor ponderado</strong> multiplica el monto mensual de cada oportunidad por su probabilidad de éxito estimada según la etapa comercial en la que se encuentra, reflejando el valor monetario esperado del pipeline.</p>
                     </div>
                 </div>
 
@@ -1285,17 +1257,17 @@
                         <svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Respuesta:</strong> Contemplan el <strong>mes calendario en curso</strong>. Las oportunidades nuevas son aquellas cuya fecha de alta coincide con el mes y año actuales, y las oportunidades ganadas o perdidas son aquellas cuya fecha de cierre registrada corresponde al mes y año actuales.</p>
+                        <p><strong>Respuesta:</strong> Contemplan el <strong>mes calendario en curso</strong>. Las oportunidades nuevas son aquellas cuya fecha de alta en el sistema coincide con el mes y año actuales, y las oportunidades ganadas o perdidas son aquellas cuya fecha de cierre registrada corresponde al mes y año actuales.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>P12: ¿Por qué las Páginas 5 (Cohorte) y 6 (Seguimiento) tienen filtros de meses cerrados (Offset Mes)?</span>
+                        <span>P12: ¿Por qué las páginas de Cohorte Same Store y Seguimiento de Clientes analizan meses cerrados?</span>
                         <svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Respuesta:</strong> El campo <code>Offset Mes</code> indica la distancia en meses respecto al mes actual (0 = mes en curso, -1 = mes cerrado anterior). En la Página 5 (Cohorte Same Store) se aplica <code>Offset Mes <= -1</code> para comparar exclusivamente meses completos y homogéneos, evitando que un mes en curso incompleto distorsione el cálculo interanual de retención y la cascada.</p>
+                        <p><strong>Respuesta:</strong> Para realizar comparaciones interanuales y mensuales homogéneas, estas pantallas analizan exclusivamente meses calendario cerrados (finalizados). Si se incluyera un mes en curso que lleva transcurridos pocos días, sus cifras parciales distorsionarían las comparaciones de crecimiento, el cálculo de clientes retenidos y la cascada de volumen.</p>
                     </div>
                 </div>
 
@@ -1305,7 +1277,7 @@
                         <svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Respuesta:</strong> El porcentaje nominal compara el volumen absoluto de paquetes sin considerar la cantidad de días hábiles trabajados. El porcentaje ajustado divide el volumen de cada período por la cantidad de días hábiles reales transcurridos, reflejando la variación en el ritmo operativo de despacho diario real sin el sesgo del calendario.</p>
+                        <p><strong>Respuesta:</strong> El porcentaje nominal compara el volumen absoluto de paquetes sin considerar la cantidad de días hábiles trabajados. El porcentaje ajustado divide el volumen de cada período por la cantidad de días hábiles reales transcurridos, reflejando la variación en el ritmo operativo de despacho diario real sin el sesgo del calendario de feriados.</p>
                     </div>
                 </div>
 
@@ -1315,7 +1287,7 @@
                         <svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Respuesta:</strong> Representa los pesos netos facturados por cada kilogramo físico trasladado (<code>Facturación Total ÷ Kg Totales</code>). Es sustancialmente mayor en paquetes livianos (≤ 3 kg), donde la tarifa base remunera un peso bajo, y desciende en bultos pesados (> 10 kg), donde el peso acumulado diluye el ingreso por unidad de masa transportada.</p>
+                        <p><strong>Respuesta:</strong> Representa los pesos netos facturados por cada kilogramo físico trasladado (calculado dividiendo la facturación neta total por los kilogramos totales transportados). Es sustancialmente mayor en paquetes livianos (hasta 3 kg), donde la tarifa base remunera un peso bajo, y desciende en bultos pesados (más de 10 kg), donde el peso acumulado diluye el ingreso por unidad de masa transportada.</p>
                     </div>
                 </div>
             </section>
@@ -1326,12 +1298,12 @@
     <!-- Footer -->
     <footer>
         <p><strong>Suite de Business Intelligence Comercial — Logística & Distribución</strong></p>
-        <p style="margin-top: 0.25rem; font-size: 0.78rem;">Manual interactivo y guía descriptiva de métricas para Power BI.</p>
+        <p style="margin-top: 0.25rem; font-size: 0.78rem;">Manual y guía descriptiva para equipos comerciales, gerencias y directores.</p>
     </footer>
 
-    <!-- Script de Interactividad (Buscador y Navegación) -->
+    <!-- Script de Interactividad -->
     <script>
-        // Accordion FAQ
+        // Acordeón FAQ
         document.querySelectorAll('.faq-question').forEach(item => {
             item.addEventListener('click', () => {
                 const parent = item.parentElement;
